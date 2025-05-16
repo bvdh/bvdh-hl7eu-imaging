@@ -6,8 +6,8 @@ description: This guide describes how a Imaging Study Report can be represented 
 status: draft # draft | active | retired | unknown
 experimental: false
 version: 0.1.0-ballot
-fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-#fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+#R5 # fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
@@ -29,7 +29,8 @@ dependencies:
   hl7.fhir.uv.extensions: 5.2.0
   hl7.fhir.uv.ips: 1.1.0
   hl7.fhir.eu.extensions: 0.1.1-ballot
-  hl7.fhir.eu.base-r5: 0.1.0-ballot
+#R5  hl7.fhir.eu.base-r5: 0.1.0-ballot
+  hl7.fhir.eu.base: 0.1.0-ballot
   
   # eu.ehds.models: 0.1.0
   # eu.ehds.models: current
