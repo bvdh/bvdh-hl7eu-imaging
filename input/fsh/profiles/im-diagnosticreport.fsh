@@ -9,6 +9,8 @@ Diagnostic Report profile for Imaging Reports. This document represents the repo
 
 * extension contains
   $artifact-version-url named artifactVersion 0..1
+  and  $cvDiagnosticReport-composition named composition 1..1
+  and  $cvDiagnosticReport-supportingInfo named supportingInfo 0..*
 
 //business identifier and relation with the composition resource
 * identifier
@@ -34,18 +36,26 @@ Diagnostic Report profile for Imaging Reports. This document represents the repo
 
 * subject only Reference(ImPatient)
 
-* study only Reference(ImImagingStudy)
+//R5 * study only Reference(ImImagingStudy)
+* imagingStudy only Reference(ImImagingStudy)
 
 // supporting info
-* supportingInfo
-  * insert SliceElement( #value, reference )
-  * type from DiagnosticReportSupportingInfoVCodes (extensible)
-* supportingInfo contains
-    procedure 0..*
-* supportingInfo[procedure]
-  * type = DiagnosticReportSupportingInfoCodeSystem#imaging-procedure
-  * reference only Reference(ImProcedure)
 // TODO only main elements or all elements of the eHN dataset?   
+// * supportingInfo
+//   * insert SliceElement( #value, reference )
+//   * type from DiagnosticReportSupportingInfoVCodes (extensible)
+// * supportingInfo contains
+//     procedure 0..*
+// * supportingInfo[procedure]
+//   * type = DiagnosticReportSupportingInfoCodeSystem#imaging-procedure
+//   * reference only Reference(ImProcedure)
+* extension[supportingInfo]
+  * insert SliceElement( #value, extension[reference].type ) 
+  * extension[type].valueCodeableConcept from DiagnosticReportSupportingInfoVCodes (extensible)
+* extension[supportingInfo] contains procedure 0..*
+* extension[supportingInfo][procedure]
+  * extension[type].valueCodeableConcept = DiagnosticReportSupportingInfoCodeSystem#imaging-procedure
+  * extension[reference].valueReference only Reference(ImProcedure)
 
 * performer 
   * insert SliceElement( #profile, $this )
@@ -60,9 +70,10 @@ Diagnostic Report profile for Imaging Reports. This document represents the repo
 * resultsInterpreter[author] only Reference($EuPractitionerRole)
 
 // refer to the mandatory composition
-* composition 1..1
-* composition ^short = "Imaging Diagnostic Report"
-* composition only Reference(ImComposition)
+//R5 * composition 1..1
+//R5 * composition ^short = "Imaging Diagnostic Report"
+//R5 * composition only Reference(ImComposition)
+* extension[composition].valueReference only Reference(ImComposition)
 
 // code 
 * code

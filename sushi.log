@@ -4,7 +4,7 @@ info    /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging
 info  No output path specified. Output to .
 info  Using configuration file: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/sushi-config.yaml
 info  Importing FSH text...
-info  Preprocessed 78 documents with 153 aliases.
+info  Preprocessed 79 documents with 155 aliases.
 info  Imported 65 definitions and 31 instances.
 info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources
 info  Resolved hl7.fhir.uv.tools.r4#latest to concrete version 0.5.0
@@ -14,80 +14,26 @@ info  Loaded hl7.fhir.uv.extensions#5.2.0 with 759 resources
 info  Loaded hl7.fhir.uv.ips#1.1.0 with 104 resources
 info  Loaded hl7.fhir.eu.extensions#0.1.1-ballot with 7 resources
 info  Loaded hl7.fhir.eu.base#0.1.0-ballot with 23 resources
+info  Loading supplemental version of FHIR to support extensions from hl7.fhir.extensions.r5
+info  Loaded hl7.fhir.r5.core#5.0.0 with 2968 resources
 info  Loaded hl7.fhir.r4.core#4.0.1 with 4581 resources
 info  Loaded virtual package sushi-local#LOCAL with 62 resources
 info  Converting FSH to FHIR resources...
-error Cannot constrain cardinality to 1..*, as it does not fit within the original 0..1 cardinality.
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 17 - 18
-error Cannot bind value set to Reference; must be coded (code, Coding, CodeableConcept, Quantity, CodeableReference), the data types (string, uri), or a logical model with the #can-bind characteristic.
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 74
-error The type "CodeableReference(ImImagingStudy)" does not match any of the allowed types: Reference(http://hl7.org/fhir/StructureDefinition/Resource)
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 75
-error Cannot bind value set to Reference; must be coded (code, Coding, CodeableConcept, Quantity, CodeableReference), the data types (string, uri), or a logical model with the #can-bind characteristic.
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 80
-error The type "CodeableReference(ImProcedure)" does not match any of the allowed types: Reference(http://hl7.org/fhir/StructureDefinition/Resource)
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 81
 error The type "Reference(ImImagingSelection)" does not match any of the allowed types: Reference(http://hl7.org/fhir/StructureDefinition/Resource)
   File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 159
+  Line: 162
 error The type "Reference(ImKeyImageImagingSelection)" does not match any of the allowed types: Reference(http://hl7.org/fhir/StructureDefinition/Resource)
   File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 172
+  Line: 175
 error The type "Reference(ImKeyImageImagingSelection)" does not match any of the allowed types: Reference(http://hl7.org/fhir/StructureDefinition/Resource)
   File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-composition.fsh
-  Line: 187
-error No element found at path study for OnlyRule in ImDiagnosticReport, skipping rule
+  Line: 190
+warn  Definition of extension (http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.supportingInfo) is incomplete since the following type has no equivalent in FHIR 4.0.1: http://hl7.org/fhir/StructureDefinition/Citation.
+warn  Definition of extension (http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.supportingInfo) is incomplete since the following type has no equivalent in FHIR 4.0.1: http://hl7.org/fhir/StructureDefinition/Citation.
+warn  Definition of extension (http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.supportingInfo) is incomplete since the following type has no equivalent in FHIR 4.0.1: http://hl7.org/fhir/StructureDefinition/Citation.
+warn  DiagnosticReport.extension[supportingInfo]: An element with a slice name should not define its own slicing. Instead, append additional discriminators to the original slicing on the base element.
   File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 36 - 37
-error No element found at path supportingInfo for CaretValueRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/rulesets/common_rulesets.fsh
-  Line: 22
-  Applied in File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Applied on Line: 41
-error No element found at path supportingInfo for CaretValueRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/rulesets/common_rulesets.fsh
-  Line: 23
-  Applied in File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Applied on Line: 41
-error No element found at path supportingInfo for CaretValueRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/rulesets/common_rulesets.fsh
-  Line: 24
-  Applied in File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Applied on Line: 41
-error No element found at path supportingInfo for CaretValueRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/rulesets/common_rulesets.fsh
-  Line: 25
-  Applied in File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Applied on Line: 41
-error No element found at path supportingInfo.type for BindingRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 42
-error No element found at path supportingInfo for ContainsRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 43 - 44
-error No element found at path supportingInfo[procedure] for CardRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 43 - 44
-error No element found at path supportingInfo[procedure].type for AssignmentRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 46
-error No element found at path supportingInfo[procedure].reference for OnlyRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 47
-error No element found at path composition for CardRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 63
-error No element found at path composition for CaretValueRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 64
-error No element found at path composition for OnlyRule in ImDiagnosticReport, skipping rule
-  File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-diagnosticreport.fsh
-  Line: 65
+  Line: 1 - 83
 error Cannot slice element 'connectionType' since FHIR only allows slicing on choice elements (e.g., value[x]) or elements with max > 1
   File: /home/nly98977/SwArchives/hl7eu/bvdh-hl7eu-imaging/input/fsh/profiles/im-endpoint-ihe-iid-viewer.fsh
   Line: 12
@@ -3727,6 +3673,6 @@ info  Assembled Implementation Guide sources; ready for IG Publisher.
 |  -------------------------------------------------------------  |
 |                                                                 |
 ===================================================================
-| Something went eely wrong there.      1203 Errors    0 Warnings |
+| You're in deep water now.             1185 Errors    4 Warnings |
 ===================================================================
 
