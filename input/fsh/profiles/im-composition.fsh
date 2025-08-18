@@ -11,7 +11,8 @@ to who is making the statement.\n
 While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, 
 of which the Composition is the first resource contained.\n
 \n
-The `text` field of each section SHALL contain a textual representation of all listed entries.
+The `text` field of each section SHALL contain a textual representation of all listed entries.\n
+This report holds a set of required sections and a set of optional ones. It is RECOMMENDED to use the sections defined as slices in the composition. Report provider SHOULD also use the more detailed sections (`findings`, `impressions`, etc.) over the more generic `content`  when applicable.
 """
 * insert SetFmmAndStatusRule( 1, draft )
 
@@ -90,11 +91,12 @@ The `text` field of each section SHALL contain a textual representation of all l
     order 1..1 and
     history 1..1 and 
     procedure 1..1 and
-    comparison 1..1 and 
-    findings 1..1  and 
-    impression 1..1 and 
-    recommendation 1..1  and 
-    communication 0..1 
+    comparison 0..1 and 
+    findings 0..1  and 
+    impression 0..1 and 
+    recommendation 0..1  and 
+    communication 0..1 and
+    content 0..1
 
 // ///////////////////////////////// IMAGING STUDY SECTION ///////////////////////////////////////
 * section[imagingstudy]
@@ -194,8 +196,9 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry
     * insert SliceElement( #profile, $this )
   * entry contains 
-      careplan 0..*
-  * entry[careplan] only Reference($EuCarePlan)
+      careplan 0..* and servicerequest 0..*
+  * entry[careplan] only Reference($EuCarePlan) 
+  * entry[servicerequest] only Reference(ServiceRequest)
 
 
 // /////////////////// COMMUNICATION SECTION //////////////////////////
@@ -205,10 +208,13 @@ The `text` field of each section SHALL contain a textual representation of all l
   * code = $loinc#18783-1 // "Radiology Study recommendation (narrative)"
   * extension contains $note-url named note 0..*
 
-Invariant: eu-imaging-composition-1
-Description: "When a section is empty, the emptyReason extension SHALL be present."
-Severity: #error 
-Expression: "entry.empty() and emptyReason.exists()"
+// /////////////////// GENERAL CONTENT SECTION ////////////////////////
+* section[content]
+  * ^short = "Report"
+// a proper code is needed
+  * code = $loinc#LP173421-1 // Report // placeholder
+  * extension contains $note-url named note 0..*
+
 
 Extension: ImDiagnosticReportReference
 Id:   im-composition-diagnosticReportReference
@@ -221,3 +227,8 @@ Context: Composition
 * insert ExtensionContext(Composition)
 * insert SetFmmAndStatusRule ( 2, draft )
 * value[x] only Reference (ImDiagnosticReport)
+
+Invariant: eu-imaging-composition-1
+Description: "When a section is empty, the emptyReason extension SHALL be present."
+Severity: #error 
+Expression: "entry.empty() and emptyReason.exists()"
