@@ -31,7 +31,7 @@ Usage: #example
 //R4* extension[composition].valueReference = Reference(CompositionSemiStructured)
 * composition = Reference(CompositionSemiStructured)
 
-* result = Reference(Observationnarrative)
+* result = Reference(ObservationNarrative)
 * conclusion = "Beginnende Großzehengrundgelenksarthrose, links mehr als rechts. Z.n. Umstellungsosteotomie des MFK1 links."
 
 * presentedForm

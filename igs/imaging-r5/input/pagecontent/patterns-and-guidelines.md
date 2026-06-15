@@ -6,11 +6,6 @@ As is discussed in the [Data Formats](data-formats.html) section there are two f
 * For imaging reports with minimal metadata the presented form is the pdf attached to the `DiagnosticReport`.
 * For Regular imaging reports the presented form is the html Narrative of the `Composition` resource, stored in `Compostion.text` and `Compostion.section.text`.
 
-
-### Representing unstructured text (narrative) in the report
-
-The unstructured text that is present in most radiology reports SHALL be encoded in an `ObservationNarrativeReport.valueString profile`, which will be referenced from DiagnosticReport.result. It SHALL also be referenced in `Composition.section.extension[note]`, under the corresponding section from which the narrative originates (e.g. findings, history, impression, etc).
-
 ### Inclusion of tables
 
 The annotations are entered as markdown which allows inclusion of tables
