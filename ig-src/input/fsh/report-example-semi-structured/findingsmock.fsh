@@ -1,4 +1,4 @@
-Instance: Observationnarrative
+Instance: ObservationNarrative
 InstanceOf: ObservationNarrativeReport
 Usage: #example
 Title: "Observation: Semi-structured narrative findings"
