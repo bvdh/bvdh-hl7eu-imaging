@@ -1,0 +1,26 @@
+@startuml
+title Imaging Report Narrative: Content vs Reference
+
+skinparam classAttributeIconSize 0
+
+class "ObservationNarrativeReport" as ONR {
+	valueString: narrative report text
+}
+
+class "DiagnosticReportEuImaging" as DR {
+	result: Reference(Observation)
+}
+
+class "CompositionEuImaging" as COMP {
+	section[*]extension[note]: inline narrative content
+  section[findings].entry[finding]: Reference(ObservationNarrativeReport)
+}
+
+DR "1" --> "0..*" ONR : result (references Observation)
+COMP "1" --> "0..*" ONR
+
+note right of COMP
+extension[note] encodes text content directly
+end note
+
+@enduml

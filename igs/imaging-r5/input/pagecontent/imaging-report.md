@@ -109,6 +109,17 @@ The communication entry typically records the date, time, and method of communic
 
 Typically a [[[Communication]]] resource is used to represent such an event.
 
+### Representing unstructured text (narrative) in the report
+
+The unstructured text that is present in most radiology reports SHALL be encoded in an `ObservationNarrativeReport.valueString profile`, which will be referenced from DiagnosticReport.result and from `Composition.section[findings].entry[finding]`. The content of the narrative SHOULD also be included in `Composition.section.extension[note]`, under the corresponding section from which the narrative originates (e.g. findings, history, impression, etc).
+
+<figure>
+ {% include narrative-report-diagram.svg %}
+ <figcaption><b>Figure: Unstructured Narrative Representation in Imaging Report</b></figcaption>
+ <p></p>
+</figure>
+
+
 ### Report Versions
 
 Documents are created, amended and updated during their lifecycle. So although the focus is on providing the most recent version of the imaging report, users should be prepared for receiving multiple versions of the same document.
