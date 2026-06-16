@@ -118,7 +118,7 @@ The reference from [`CompositionEuImaging`](StructureDefinition-CompositionEuIma
 
 Note: The model supports dividing the report text into discrete ObservationNarrativeReport resources for each section of the report, but it is not required. It is also possible to have a single ObservationNarrativeReport resource for the whole report, and reference it from the different sections of the Composition.
 
-Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-markdown.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) content.
+Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
 
 <figure>
  {% include narrative-report-diagram.svg %}

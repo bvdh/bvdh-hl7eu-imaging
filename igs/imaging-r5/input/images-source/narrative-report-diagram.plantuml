@@ -26,9 +26,6 @@ Sections present: reference from section[].entry
 and include text in section[].text.
 No sections: reference from section[report].entry
 and include text in section[report].text.
-
-One ObservationNarrativeReport MAY cover the whole
-report or be split one per section.
 end note
 
 @enduml
