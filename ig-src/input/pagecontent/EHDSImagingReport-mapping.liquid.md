@@ -597,7 +597,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.results[string]</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[findings].extension[note]</td>
+        <td>section[report].entry[narrative-report]</td>
         <td></td>
       </tr>
       <tr>
@@ -625,7 +625,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.conclusion.impression</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[impression].extension[note]</td>
+        <td>section[impression].entry[narrative-report]</td>
         <td></td>
       </tr>
       <tr>
@@ -1302,7 +1302,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.results[string]</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[findings].extension[note]</td>
+        <td>section[report].entry[narrative-report]</td>
         <td></td>
       </tr>
       <tr>
@@ -1330,7 +1330,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.conclusion.impression</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[impression].extension[note]</td>
+        <td>section[impression].entry[narrative-report]</td>
         <td></td>
       </tr>
       <tr>

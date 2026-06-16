@@ -12,15 +12,20 @@ class "DiagnosticReportEuImaging" as DR {
 }
 
 class "CompositionEuImaging" as COMP {
-	section[*]extension[note]: inline narrative content
-  section[findings].entry[finding]: Reference(ObservationNarrativeReport)
+	section[].entry[report-narrative]: Reference(ObservationNarrativeReport)
+	section[].text: narrative content (SHOULD)
+	section[report].entry[report-narrative]: Reference(ObservationNarrativeReport)
+	section[report].text: full narrative when no sections (SHOULD)
 }
 
 DR "1" --> "0..*" ONR : result (references Observation)
-COMP "1" --> "0..*" ONR
+COMP "1" --> "0..*" ONR : section[].entry[report-narrative]\n(references Observation)
 
 note right of COMP
-extension[note] encodes text content directly
+Sections present: reference from section[].entry
+and include text in section[].text.
+No sections: reference from section[report].entry
+and include text in section[report].text.
 end note
 
 @enduml
