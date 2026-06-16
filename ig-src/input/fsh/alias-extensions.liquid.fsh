@@ -41,3 +41,6 @@ Alias: $CrossVersion-R5-DocumentReference.modality-for-R4 = http://hl7.org/fhir/
 Alias: $diagnosticReport-composition = http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.composition
 {% endif %}
 Alias: $hl7euDiagnosticReferenceReference     =  http://hl7.eu/fhir/extensions/StructureDefinition/composition-diagnosticReportReference
+Alias: $rendering-xhtml-url                   =  http://hl7.org/fhir/StructureDefinition/rendering-xhtml
+Alias: $rendering-markdown-url               =  http://hl7.org/fhir/StructureDefinition/rendering-markdown
+Alias: $CrossVersion-Observation.value       =  http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.value
