@@ -111,7 +111,7 @@ Typically a [[[Communication]]] resource is used to represent such an event.
 
 ### Representing unstructured text (narrative) in the report
 
-The unstructured text that is present in most radiology reports SHALL be encoded in an `ObservationNarrativeReport.valueString profile`, which will be referenced from DiagnosticReport.result and from `Composition.section[findings].entry[finding]`. The content of the narrative SHOULD also be included in `Composition.section.extension[note]`, under the corresponding section from which the narrative originates (e.g. findings, history, impression, etc).
+The unstructured text that is present in most radiology reports SHALL be encoded in an `ObservationNarrativeReport.valueString profile`, which will be referenced from `DiagnosticReport.result` and from `Composition.section[findings].entry[finding]`. The content of the narrative SHOULD also be included in `Composition.section.extension[note]`, under the corresponding section from which the narrative originates (e.g. findings, history, impression, etc).
 
 <figure>
  {% include narrative-report-diagram.svg %}
