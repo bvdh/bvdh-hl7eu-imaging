@@ -11,9 +11,12 @@ Description: "Unstructured narrative text in an imaging report."
 // * code[narrative-report] = $loinc#18782-3 "Radiology Study observation (narrative)"
 
 * value[x] 1..1
-* value[x] only string
 * value[x] ^short = "Unstructured narrative imaging report"
 * value[x] ^definition = "This element represents unstructured narrative text in an imaging report, as it was entered by the reporting clinician or an automated system."
+//R5* value[x] only string or Attachment
+* value[x] only string
+* valueString.extension contains $rendering-xhtml-url named renderingXhtml 0..1 and $rendering-markdown-url named renderingMarkdown 0..1
+* extension contains $CrossVersion-Observation.value named observationValue 0..1
 
 * basedOn
   * insert SliceElement( #type, $this )

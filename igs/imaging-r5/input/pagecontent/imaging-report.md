@@ -111,7 +111,14 @@ Typically a [[[Communication]]] resource is used to represent such an event.
 
 ### Representing unstructured text (narrative) in the report
 
-The unstructured text that is present in most radiology reports SHALL be encoded in an `ObservationNarrativeReport.valueString profile`, which will be referenced from `DiagnosticReport.result` and from `Composition.section[findings].entry[finding]`. The content of the narrative SHOULD also be included in `Composition.section.extension[note]`, under the corresponding section from which the narrative originates (e.g. findings, history, impression, etc).
+The unstructured (narrative) text present in most imaging reports SHALL be encoded in an [`ObservationNarrativeReport`](StructureDefinition-ObservationNarrativeReport.html) profile, using its `valueString` or `valueAttachment` (in R4 a cross-version extension enables this type) element. That resource SHALL be referenced from [`DiagnosticReportEuImaging.result`](StructureDefinition-DiagnosticReportEuImaging-definitions.html#DiagnosticReport.result).
+The reference from [`CompositionEuImaging`](StructureDefinition-CompositionEuImaging.html) to the `ObservationNarrativeReport` depends on the presence or abscense of sections in the report text (e.g. findings, history, impression, etc):
+- If sections are present, the reference is from `Composition.section[].entry[report-narrative]` for the corresponding section slice. And the content of the narrative SHOULD be included in `Composition.section[].text`.
+- If no sections are present nor can be derived from the source data, the reference is from `Composition.section[report].entry[report-narrative]`. And the content of the narrative SHOULD be included in `Composition.section[report].text`.
+
+Note: The model supports dividing the report text into discrete ObservationNarrativeReport resources for each section of the report, but it is not required. It is also possible to have a single ObservationNarrativeReport resource for the whole report, and reference it from the different sections of the Composition.
+
+Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-markdown.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) content.
 
 <figure>
  {% include narrative-report-diagram.svg %}

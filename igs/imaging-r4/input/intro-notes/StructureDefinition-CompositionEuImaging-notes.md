@@ -89,7 +89,7 @@ The following table lists the elements that should be included in the narrative 
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
 | ObservationNarrativeReport | value[x] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
-| CompositionEuImaging | section[findings].extension[note] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
+| CompositionEuImaging | section[report].entry[narrative-report] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
 | CompositionEuImaging | section[findings].entry[finding] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
 | DiagnosticReportEuImaging | result |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
 
@@ -102,7 +102,7 @@ The following table lists the elements that should be included in the narrative 
 | -------- | ------- | -------------- | --------------------- |
 | EuCondition | code |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCondition.html).problem |
 | EuCondition | severity |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCondition.html).severity |
-| CompositionEuImaging | section[impression].extension[note] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.impression |
+| CompositionEuImaging | section[impression].entry[narrative-report] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.impression |
 | CompositionEuImaging | section[impression].entry[impression] | ObservationFindingEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.conditionOrFinding[x] |
 
 ### Recommendation
