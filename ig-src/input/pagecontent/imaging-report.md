@@ -116,16 +116,17 @@ The reference from [`CompositionEuImaging`](StructureDefinition-CompositionEuIma
 - If sections are present, the reference is from `Composition.section[].entry[report-narrative]` for the corresponding section slice. And the content of the narrative SHOULD be included in `Composition.section[].text`.
 - If no sections are present nor can be derived from the source data, the reference is from `Composition.section[report].entry[report-narrative]`. And the content of the narrative SHOULD be included in `Composition.section[report].text`.
 
-Note: The model supports dividing the report text into discrete ObservationNarrativeReport resources for each section of the report, but it is not required. It is also possible to have a single ObservationNarrativeReport resource for the whole report, and reference it from the different sections of the Composition.
-
-Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
-
 <figure>
  {% include narrative-report-diagram.svg %}
  <figcaption><b>Figure: Unstructured Narrative Representation in Imaging Report</b></figcaption>
  <p></p>
 </figure>
 
+Note: The model supports dividing the report text into discrete ObservationNarrativeReport resources for each section of the report, but it is not required. It is also possible to have a single ObservationNarrativeReport resource for the whole report, and reference it from the different sections of the Composition.
+
+Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
+
+Note: Encoding the narrative as an `Observation.valueString` or `valueAttachment` and referencing it from `DiagnosticReport.result` follows an existing, well-established pattern in US Core:  [chest x-ray findings Observation](https://build.fhir.org/ig/HL7/US-Core/Observation-xray-chest-findings.json.html).
 
 ### Report Versions
 
