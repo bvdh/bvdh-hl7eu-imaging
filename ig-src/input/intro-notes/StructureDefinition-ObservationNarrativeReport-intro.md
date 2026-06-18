@@ -1,3 +1,3 @@
 Most radiology reports still contain a significant amount of unstructured, narrative (dictated or free-text) content. This profile defines a dedicated, explicit home for that narrative so it can be stored, referenced and reused consistently.
 
-To see how to reference this resource in the model please read [Representing unstructured text (narrative) in the report](imaging-report.html#representing-unstructured-text-narrative-in-the-report)
+To see how to reference this resource in the model please read [Representing unstructured text (narrative) in the report](imaging-report.html#representing-unstructured-narrative-text-in-the-report)
