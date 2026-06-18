@@ -1,5 +1,5 @@
 @startuml
-title Imaging Report Narrative: Content vs Reference
+title Imaging Report narrative representation
 
 skinparam classAttributeIconSize 0
 
@@ -12,20 +12,11 @@ class "DiagnosticReportEuImaging" as DR {
 }
 
 class "CompositionEuImaging" as COMP {
-	section[].entry[report-narrative]: Reference(ObservationNarrativeReport)
-	section[].text: narrative content (SHOULD)
-	section[report].entry[report-narrative]: Reference(ObservationNarrativeReport)
-	section[report].text: full narrative when no sections (SHOULD)
+	section[].text: for section-specific narrative content
+	section[report].text: for full narrative when no sections
 }
 
 DR "1" --> "0..*" ONR : result (references Observation)
-COMP "1" --> "0..*" ONR : section[].entry[report-narrative]\n(references Observation)
-
-note right of COMP
-Sections present: reference from section[].entry
-and include text in section[].text.
-No sections: reference from section[report].entry
-and include text in section[report].text.
-end note
+COMP "1" --> "0..*" ONR : section[].text.extension[text-link]\n(inline references Observation)
 
 @enduml
