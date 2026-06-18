@@ -34,6 +34,8 @@ as it was entered by the reporting clinician or an automated system."
   $rendering-markdown-url named renderingMarkdown 0..1
 {{R4}}  and $CrossVersion-Observation.value named valueAttachment 0..1
 {{R4}}* value[x].extension[valueAttachment] ^short = "Narrative report as an Attachment, conveyed via the R5 cross-version extension"
+{{R4}}* value[x].extension[valueAttachment].value[x] 1..1
+{{R4}}* value[x].extension[valueAttachment].value[x] only Attachment
 {{R4}}* value[x].extension[renderingXhtml] ^short = "XHTML rendering of the narrative value"
 {{R4}}* value[x].extension[renderingMarkdown] ^short = "Markdown rendering of the narrative value"
 
