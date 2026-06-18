@@ -92,8 +92,8 @@ The `text` field of each section SHALL contain a textual representation of all l
 * section.emptyReason from SectionEmptyReasonEuImaging (preferred)  
 * section obeys eu-imaging-composition-1
 * section obeys eu-imaging-composition-2
-{{R4}}* section.text.extension contains TextLink named text-link 0..1
-{{R5}}* section.text.extension contains $textLink named text-link 0..1
+// {{R4}}* section.text.extension contains TextLink named text-link 0..1
+// {{R5}}* section.text.extension contains $textLink named text-link 0..1
 * section contains 
     imagingstudy 1..1  and
     order 1..1 and
@@ -254,63 +254,63 @@ Description: "A section must contain at least one of text, entries, or sub-secti
 Severity: #error 
 Expression: "text.exists() or entry.exists() or section.exists()"
 
-{% if isR4 %}
-// transporting this extension avilable in extension package 5.3.0 butnot for R4, so we define it here for R4 only
-Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
+// {% if isR4 %}
+// // transporting this extension avilable in extension package 5.3.0 butnot for R4, so we define it here for R4 only
+// Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 
-Extension: TextLink
-Id: textLink
-Title: "Text Link"
-Description: "Used to denote which portions of the narrative are linked to (usually, generated from) structured data in resources. This information might be used in several different ways, including translating and regenerating narrative in applications that are using/presenting the narrative. Note that there are two related extensions for linking data and narrative: originalText and narrativeLink."
-Context: Narrative
-* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension[=].valueCode = #fhir
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-* ^extension[=].valueInteger = 3
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"
-* ^extension[=].valueCode = #can-bind
-* ^identifier.system = "urn:ietf:rfc:3986"
-* ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.5.1691"
-* ^version = "5.3.0"
-* ^experimental = false
-* ^date = "2013-12-05"
-* ^publisher = "HL7 International / FHIR Infrastructure"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fiwg"
-* ^jurisdiction = $m49.htm#001
-* . 0..1
-* . ^short = "Text Link"
-* . ^definition = "Link between narrative elements and structured data items in resources"
-* . ^comment = "Used to denote which portions of the narrative are linked to (usually, generated from) structured data in resources. This information might be used in several different ways, including translating and regenerating narrative in applications that are using/presenting the narrative."
-* extension contains
-    htmlid 1..* and
-    data 1..1 and
-    selector 0..1
-* extension[htmlid] only Extension
-* extension[htmlid] ^short = "Unique identifier"
-* extension[htmlid] ^definition = "The id attribute on an element in the xhtml narrative"
-* extension[htmlid] ^comment = "The id attribute on an element in the xhtml narrative."
-* extension[htmlid].url only uri
-* extension[htmlid].value[x] 1..
-* extension[htmlid].value[x] only string
-* extension[htmlid].value[x] ^definition = "The actual HTML element id"
-* extension[data] only Extension
-* extension[data] ^short = "Unique identifier"
-* extension[data] ^definition = "The id attribute on a resource element (#{id}, relative#{id} or https://absolute#{id})"
-* extension[data] ^comment = "The id attribute on an element in the xhtml narrative. The reference can be a fragment to a reference in the resource that contains the narrative, or a relative or absolute URL, optionally with a fragment that identifies an element in the other resource."
-* extension[data].url only uri
-* extension[data].value[x] 1..
-* extension[data].value[x] only uri
-* extension[data].value[x] ^short = "The actual data element in this resource, or another resource"
-* extension[selector] only Extension
-* extension[selector] ^short = "FHIRPath that selects a subset of the identified data"
-* extension[selector] ^definition = "FHIRPath that selects a subset of the identified data. This sub-extension exists because in some circumstances, the specific data items are in resources where the constructor of the narrative can't introduce specific ids on the relevent elements"
-* extension[selector].url only uri
-* extension[selector].value[x] 1..
-* extension[selector].value[x] only string
-* extension[selector].value[x] ^short = "Simple FHIRPath that can't use .resolve()"
+// Extension: TextLink
+// Id: textLink
+// Title: "Text Link"
+// Description: "Used to denote which portions of the narrative are linked to (usually, generated from) structured data in resources. This information might be used in several different ways, including translating and regenerating narrative in applications that are using/presenting the narrative. Note that there are two related extensions for linking data and narrative: originalText and narrativeLink."
+// Context: Narrative
+// * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension[=].valueCode = #fhir
+// * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+// * ^extension[=].valueInteger = 3
+// * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+// * ^extension[=].valueCode = #trial-use
+// * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"
+// * ^extension[=].valueCode = #can-bind
+// * ^identifier.system = "urn:ietf:rfc:3986"
+// * ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.5.1691"
+// * ^version = "5.3.0"
+// * ^experimental = false
+// * ^date = "2013-12-05"
+// * ^publisher = "HL7 International / FHIR Infrastructure"
+// * ^contact.telecom.system = #url
+// * ^contact.telecom.value = "http://www.hl7.org/Special/committees/fiwg"
+// * ^jurisdiction = $m49.htm#001
+// * . 0..1
+// * . ^short = "Text Link"
+// * . ^definition = "Link between narrative elements and structured data items in resources"
+// * . ^comment = "Used to denote which portions of the narrative are linked to (usually, generated from) structured data in resources. This information might be used in several different ways, including translating and regenerating narrative in applications that are using/presenting the narrative."
+// * extension contains
+//     htmlid 1..* and
+//     data 1..1 and
+//     selector 0..1
+// * extension[htmlid] only Extension
+// * extension[htmlid] ^short = "Unique identifier"
+// * extension[htmlid] ^definition = "The id attribute on an element in the xhtml narrative"
+// * extension[htmlid] ^comment = "The id attribute on an element in the xhtml narrative."
+// * extension[htmlid].url only uri
+// * extension[htmlid].value[x] 1..
+// * extension[htmlid].value[x] only string
+// * extension[htmlid].value[x] ^definition = "The actual HTML element id"
+// * extension[data] only Extension
+// * extension[data] ^short = "Unique identifier"
+// * extension[data] ^definition = "The id attribute on a resource element (#{id}, relative#{id} or https://absolute#{id})"
+// * extension[data] ^comment = "The id attribute on an element in the xhtml narrative. The reference can be a fragment to a reference in the resource that contains the narrative, or a relative or absolute URL, optionally with a fragment that identifies an element in the other resource."
+// * extension[data].url only uri
+// * extension[data].value[x] 1..
+// * extension[data].value[x] only uri
+// * extension[data].value[x] ^short = "The actual data element in this resource, or another resource"
+// * extension[selector] only Extension
+// * extension[selector] ^short = "FHIRPath that selects a subset of the identified data"
+// * extension[selector] ^definition = "FHIRPath that selects a subset of the identified data. This sub-extension exists because in some circumstances, the specific data items are in resources where the constructor of the narrative can't introduce specific ids on the relevent elements"
+// * extension[selector].url only uri
+// * extension[selector].value[x] 1..
+// * extension[selector].value[x] only string
+// * extension[selector].value[x] ^short = "Simple FHIRPath that can't use .resolve()"
 
 
-{% endif %}
+// {% endif %}

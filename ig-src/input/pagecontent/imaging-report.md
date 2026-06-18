@@ -121,8 +121,8 @@ The source data of that text SHALL be represented in an [`ObservationNarrativeRe
  <p></p>
 </figure>
 
-Note: Although not mandated, creators MAY link the text in `Composition.section[].text` to the corresponding `ObservationNarrativeReport` that is present in the Bundle using the standard (textLink extension)[https://hl7.org/fhir/extensions/StructureDefinition-textLink.html].
-Also, When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
+<!-- Note: Although not mandated, creators MAY link the text in `Composition.section[].text` to the corresponding `ObservationNarrativeReport` that is present in the Bundle using the standard (textLink extension)[https://hl7.org/fhir/extensions/StructureDefinition-textLink.html]. -->
+Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
 
 For more information on the rationale for this design, please read [Design Considerations: Narrative Content](design-considerations.html#narrative-unstructured-report-content-encoding).
 
