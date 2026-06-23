@@ -4,10 +4,10 @@ Title: "ActorDefinition: Imaging Report Producer"
 Description: "The actor responsible for producing the Imaging Report resources."
 Usage: #definition
 * name = "EuImagingReportProducer"
-* title = "Imaging Report provider"
+* title = "Imaging Report Producer"
 * status = #draft
-* description = "Provides the Imaging Report."
+* description = "Provides the Imaging Report. Copied from Xt-EHR Producer actor definition."
 * documentation = """
-This actor typically represents a system that provides access to radiology reports. Typically this would be systems like a Electronic Health Record (EHR), Radiology Information System (RIS) or a Picture Archiving and Communication System (PACS) that manages and provides access to imaging reports.
+A system that generates or makes available structured electronic health data for exchange. In this role, the system is responsible for being technically capable of populating the relevant data elements in accordance with the applicable “able-to-populate” obligations and for associating the required metadata, such as authorship, provenance, status, and temporal information, before the data are made available to downstream systems.
 """
 * type = #system
