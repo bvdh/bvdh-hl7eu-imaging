@@ -81,6 +81,8 @@ pages:
       title: Changes
     dependencies.md:
       title: Dependencies
+    cross-version-analysis.md:
+      title: Cross version analysis
     references.md:
       title: References
     adapting.md: 
@@ -171,7 +173,6 @@ menu:
   Introduction:
     Background and context: background.html
     Changes: changes.html
-    Dependencies: dependencies.html
     References: references.html
     Adapting Guidelines for Country use: adapting.html
     Authors and contributors: contributors.html
@@ -194,6 +195,7 @@ menu:
     Authors and contributors: contributors.html
     Copyright: copyright.html
     Dependencies: dependencies.html
+    Cross version analysis: cross-version-analysis.html
   Artifacts:
     Structural: artifacts-structural.html
     Obligations: artifacts-obligations.html
