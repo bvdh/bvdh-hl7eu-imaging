@@ -10,7 +10,8 @@ ig-template/**/*.db
 ig-template/**/*index.json
 publisher.jar
 translations/**
-igs/**
+# igs/imaging-r4/**
+# igs/imaging-r5/**
 
 subigs/**
 ig-test
