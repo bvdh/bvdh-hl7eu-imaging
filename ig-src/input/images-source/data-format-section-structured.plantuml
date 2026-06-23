@@ -64,7 +64,6 @@ DiagnosticReport --> ImagingStudy : imagingStudy
 DiagnosticReport --> ServiceRequest : basedOn
 DiagnosticReport --> ObservationFindingEuImaging : result
 DiagnosticReport --> ObservationNarrativeReport : result
-Composition --> ObservationNarrativeReport : section.entry[finding]
 Composition --> ObservationFindingEuImaging : section.entry[finding]
 
 DiagnosticReport --> Composition : composition
