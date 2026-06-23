@@ -627,7 +627,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.conclusion.impression</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[impression].entry[narrative-report]</td>
+        <td>section[impression].text</td>
         <td></td>
       </tr>
       <tr>

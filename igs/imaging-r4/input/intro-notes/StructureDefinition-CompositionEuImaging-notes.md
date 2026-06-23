@@ -102,7 +102,7 @@ The following table lists the elements that should be included in the narrative 
 | -------- | ------- | -------------- | --------------------- |
 | EuCondition | code |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCondition.html).problem |
 | EuCondition | severity |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCondition.html).severity |
-| CompositionEuImaging | section[impression].entry[narrative-report] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.impression |
+| CompositionEuImaging | section[impression].text |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.impression |
 | CompositionEuImaging | section[impression].entry[impression] | ObservationFindingEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.conditionOrFinding[x] |
 
 ### Recommendation

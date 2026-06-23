@@ -112,13 +112,11 @@ The `text` field of each section SHALL contain a textual representation of all l
   * code = $loinc#18726-0
   * entry 
     * insert SliceElement( #profile, $this )
-  * entry contains imagingstudy 1..* and
-    narrative-report 0..*
+  * entry contains imagingstudy 1..*
   * entry[imagingstudy]
     * ^short = "Imaging Study Reference"
     * ^definition = "This entry holds a reference to the Imaging Study instance that is associated with this Composition."
   * entry[imagingstudy] only Reference(ImagingStudyEuImaging)  
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
 
 // ///////////////////////////////// ORDER SECTION ///////////////////////////////////////
 * section[order]
@@ -128,14 +126,12 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry
     * insert SliceElement( #profile, $this )
   * entry contains 
-      order 0..* and
-      narrative-report 0..*
+      order 0..*
 
   * entry[order]
     * ^short = "Order reference"
     * ^definition = "This entry holds a reference to the order for the Imaging Study and report."
   * entry[order] only Reference(ServiceRequestOrderEuImaging)  
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
 
 // // ///////////////////////////////// HISTORY SECTION ///////////////////////////////////////
 * section[history]
@@ -147,12 +143,11 @@ The `text` field of each section SHALL contain a textual representation of all l
   * code = $loinc#11329-0 // "History general Narrative - Reported"
   * entry 
     * insert SliceElement( #profile, [[$this.resolve()]] )
-  * entry contains vitals 0..* and problemlist 0..* and implants 0..* and medication 0..* and narrative-report 0..*
+  * entry contains vitals 0..* and problemlist 0..* and implants 0..* and medication 0..*
   * entry[vitals] only Reference(Observation)
   * entry[problemlist] only Reference(Condition)
   * entry[implants] only Reference(Device)
   * entry[medication] only Reference(MedicationAdministration or MedicationRequest)
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
 
 // // ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
@@ -162,7 +157,7 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry 
     * insert SliceElement( #profile, $this )
   * entry contains 
-      procedure 0..* and adverse-event 0..* and radiation-dose 0..* and narrative-report 0..*
+      procedure 0..* and adverse-event 0..* and radiation-dose 0..*
   * entry[procedure] only Reference(ProcedureEuImaging)
     * ^short = "The imaging Procedure(s)"
     * ^definition = "A reference the the procedure(s) in which the imaging study was performed."
@@ -172,8 +167,6 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry[radiation-dose] only Reference(ObservationRadiationDoseEuImaging)
     * ^short = "Radiation-dose information"
     * ^definition = "Information on radiation the patient was exposed to during the procedure."
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
-    * ^short = "Procedure narrative report"
 
 // ////////////////// COMPARISON SECTION //////////////////////////
 * section[comparison]
@@ -182,10 +175,8 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry
     * insert SliceElement( #profile, [[resolve()]] )
   * entry contains 
-      comparedstudy 0..* and
-      narrative-report 0..*
+      comparedstudy 0..*
   * entry[comparedstudy] only Reference( ImagingStudyEuImaging or ImagingSelectionEuImaging )
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
 
 // /////////////////// FINDINGS SECTION //////////////////////////
 * section[findings]
@@ -196,13 +187,11 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry contains 
       finding 0..* and
       keyimage 0..* and
-      image 0..* and
-      narrative-report 0..*
-
+      image 0..*
   * entry[finding] only Reference(Observation)
   * entry[keyimage] only Reference( DocumentReferenceKeyImageEuImaging or ImagingSelectionKeyImageEuImaging )
   * entry[image] only Reference( DocumentReference  or Media  )
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
+
 
 // /////////////////// IMPRESSION SECTION //////////////////////////
 * section[impression]
@@ -213,12 +202,10 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry contains 
       finding 0..* and
       impression 0..* and
-      keyimage 0..* and
-      narrative-report 0..*
+      keyimage 0..*
   * entry[finding] only Reference(ObservationFindingEuImaging)
   * entry[impression] only Reference( $EuCondition )
   * entry[keyimage] only Reference(DocumentReferenceKeyImageEuImaging or ImagingSelectionKeyImageEuImaging)
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
 
 // /////////////////// RECOMMENDATION SECTION //////////////////////////
 * section[recommendation]
@@ -227,9 +214,8 @@ The `text` field of each section SHALL contain a textual representation of all l
   
   * entry
     * insert SliceElement( #profile, $this )
-  * entry contains suggestion 0..* and narrative-report 0..*
+  * entry contains suggestion 0..*
   * entry[suggestion] only Reference($EuCarePlan or $EuServiceRequest)
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
 
 
 // /////////////////// COMMUNICATION SECTION //////////////////////////
@@ -237,10 +223,6 @@ The `text` field of each section SHALL contain a textual representation of all l
   * ^short = "Communications"
 // a proper code is needed
   * code = $loinc#73568-8 // "Communication"
-  * entry
-    * insert SliceElement( #profile, $this )
-  * entry contains narrative-report 0..*
-  * entry[narrative-report] only Reference(ObservationNarrativeReport)
   
 
 // /////////////////// FULL-REPORT SECTION //////////////////////////

@@ -109,16 +109,11 @@ The communication entry typically records the date, time, and method of communic
 
 Typically a [[[Communication]]] resource is used to represent such an event.
 
-### Representing unstructured text (narrative) in the report
+### Representing unstructured (narrative) text in the report
 
-The unstructured (narrative) text present in most imaging reports SHALL be encoded in an [`ObservationNarrativeReport`](StructureDefinition-ObservationNarrativeReport.html) profile, using its `valueString` or `valueAttachment` (in R4 a cross-version extension enables this type) element. That resource SHALL be referenced from [`DiagnosticReportEuImaging.result`](StructureDefinition-DiagnosticReportEuImaging-definitions.html#DiagnosticReport.result).
-The reference from [`CompositionEuImaging`](StructureDefinition-CompositionEuImaging.html) to the `ObservationNarrativeReport` depends on the presence or abscense of sections in the report text (e.g. findings, history, impression, etc):
-- If sections are present, the reference is from `Composition.section[].entry[report-narrative]` for the corresponding section slice. And the content of the narrative SHOULD be included in `Composition.section[].text`.
-- If no sections are present nor can be derived from the source data, the reference is from `Composition.section[report].entry[report-narrative]`. And the content of the narrative SHOULD be included in `Composition.section[report].text`.
+The unstructured (narrative) text present in most imaging reports SHALL be encoded in each `Composition.section[].text` of the [`CompositionEuImaging`](StructureDefinition-CompositionEuImaging.html) profile,  if sections are present in the report, or in `Composition.section[report].text` if no sections are present.
 
-Note: The model supports dividing the report text into discrete ObservationNarrativeReport resources for each section of the report, but it is not required. It is also possible to have a single ObservationNarrativeReport resource for the whole report, and reference it from the different sections of the Composition.
-
-Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
+The source data of that text SHALL be represented in an [`ObservationNarrativeReport`](StructureDefinition-ObservationNarrativeReport.html) profile, using its `valueString` or `valueAttachment` (in R4 a cross-version extension enables this type) element. That resource SHALL be referenced from [`DiagnosticReportEuImaging.result`](StructureDefinition-DiagnosticReportEuImaging-definitions.html#DiagnosticReport.result).
 
 <figure>
  {% include narrative-report-diagram.svg %}
@@ -126,6 +121,10 @@ Note: When using `ObservationNarrativeReport.valueString`, two extensions are av
  <p></p>
 </figure>
 
+<!-- Note: Although not mandated, creators MAY link the text in `Composition.section[].text` to the corresponding `ObservationNarrativeReport` that is present in the Bundle using the standard (textLink extension)[https://hl7.org/fhir/extensions/StructureDefinition-textLink.html]. -->
+Note: When using `ObservationNarrativeReport.valueString`, two extensions are available to encode [xhtml](https://hl7.org/fhir/R4/extension-rendering-xhtml.html) or [markdown](https://hl7.org/fhir/R4/extension-rendering-markdown.html) content.
+
+For more information on the rationale for this design, please read [Design Considerations: Narrative Content](design-considerations.html#narrative-unstructured-report-content-encoding).
 
 ### Report Versions
 
