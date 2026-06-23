@@ -1,3 +1,4 @@
+# IDEAs
 /.idea
 .vscode/launch.json
 .vscode/mcp.json
@@ -20,3 +21,7 @@ ig-test
 # LibreOffice/OpenOffice lock files
 .~lock.*#
 .vscode/settings.json
+
+# FHIR publisher specific
+build-logs/**
+jira/node_modules/**
