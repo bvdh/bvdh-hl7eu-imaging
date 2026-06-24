@@ -6,8 +6,8 @@ Usage: #definition
 * name = "EUImagingReportReportConsumer"
 * title = "Imaging Report Consumer"
 * status = #draft
-* description = "Consumes the Imaging Report."
+* description = "Consumes the Imaging Report. Copied from Xt-EHR Consumer actor definition"
 * documentation = """
-This actor represents a system that consumes an imaging report. Given that this encompases a wide variety of systems, including displaying pre-rendered reports in a UI, processing for clinical decision report, systems generating metrics, etc., no obligations are defined for this actor as of now. Obligations may be added in the future when specific use cases or subgorups are defined.
+A system that receives electronic health data originating from another system and processes or displays that data. In this role, the system is responsible for ingesting and validating the received data and for preserving the meaning, structure, and associated metadata of the information in accordance with the applicable Consumer obligations, ensuring correct interpretation and presentation to end users or other systems.
 """
 * type = #system
