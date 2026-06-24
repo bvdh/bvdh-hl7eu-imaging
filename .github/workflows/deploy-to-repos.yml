@@ -23,6 +23,9 @@ jobs:
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
 
+      - name: Install liquidjs
+        run: sudo npm install -g liquidjs
+
       - name: Preprocess
         run: |
           chmod u+x *.sh
@@ -55,6 +58,9 @@ jobs:
 
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
+
+      - name: Install liquidjs
+        run: sudo npm install -g liquidjs
 
       - name: Preprocess
         run: |
@@ -120,12 +126,12 @@ jobs:
           echo "Working with branch: $BRANCH_NAME"
           
           # Check if branch exists remotely
-          if git ls-remote --heads origin $BRANCH_NAME | grep -q $BRANCH_NAME; then
+          if git ls-remote --heads origin "$BRANCH_NAME" | grep -qF "$BRANCH_NAME"; then
             echo "Branch $BRANCH_NAME exists remotely, checking out"
-            git checkout $BRANCH_NAME
+            git checkout "$BRANCH_NAME"
           else
             echo "Branch $BRANCH_NAME doesn't exist, creating new branch"
-            git checkout -b $BRANCH_NAME
+            git checkout -b "$BRANCH_NAME"
           fi
 
       - name: Sync R4 content
@@ -160,7 +166,7 @@ jobs:
             git commit -m "Auto-sync from imaging repository - commit ${{ github.sha }}"
           fi
           
-          git push origin ${{ github.ref_name }}
+          git push origin "${{ github.ref_name }}"
           echo "R4 repository updated successfully - auto-ig-builder should trigger"
 
   deploy-r5:
@@ -208,12 +214,12 @@ jobs:
           echo "Working with branch: $BRANCH_NAME"
           
           # Check if branch exists remotely
-          if git ls-remote --heads origin $BRANCH_NAME | grep -q $BRANCH_NAME; then
+          if git ls-remote --heads origin "$BRANCH_NAME" | grep -qF "$BRANCH_NAME"; then
             echo "Branch $BRANCH_NAME exists remotely, checking out"
-            git checkout $BRANCH_NAME
+            git checkout "$BRANCH_NAME"
           else
             echo "Branch $BRANCH_NAME doesn't exist, creating new branch"
-            git checkout -b $BRANCH_NAME
+            git checkout -b "$BRANCH_NAME"
           fi
 
       - name: Sync R5 content
@@ -248,5 +254,5 @@ jobs:
             git commit -m "Auto-sync from imaging repository - commit ${{ github.sha }}"
           fi
           
-          git push origin ${{ github.ref_name }}
+          git push origin "${{ github.ref_name }}"
           echo "R5 repository updated successfully - auto-ig-builder should trigger"

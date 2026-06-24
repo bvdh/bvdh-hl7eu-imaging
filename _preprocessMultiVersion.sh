@@ -15,6 +15,13 @@ fi
 
 ig_base="imaging"
 
+# Warm the liquidjs package into the npx cache once, serially, before the
+# parallel processing loop below. On a cold cache (e.g. CI), multiple concurrent
+# `npx --yes liquidjs` calls race to install the package and some fail silently,
+# producing empty output and thus an invalid (empty) sushi-config.yaml.
+echo "Ensuring liquidjs is available (warming npx cache)"
+npx --yes liquidjs --help >/dev/null 2>&1 || true
+
 for version in "${versions[@]}"; do
     if [ "$version" = "4.0.1" ]; then
         context_version="R4"
