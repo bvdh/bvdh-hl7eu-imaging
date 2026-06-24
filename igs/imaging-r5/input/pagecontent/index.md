@@ -43,8 +43,8 @@
 
 ### Scope
 
-This implementation guide specifies imaging study report data in the **European** context, as defined in  and refined by , as a FHIR model. It defines:
-* The structure and contents of a FHIR imaging study reports.
+This implementation guide specifies imaging study report data in the **European** context, as defined in {{ehnImaging}} and refined by {{XtEhrImaging}}, as a FHIR model. It defines:
+* The structure and contents of a FHIR imaging study report.
 * Mapping between this IG and the Xt-EHR logical models for imaging reports, as functional requirements.
 * Example implementations of the defined models for Imaging Study Reports.
 * Relation of this specification with the existing ecosystem, including IHE MADO, IHE RAD, and EHDS API specifications.
@@ -55,7 +55,7 @@ This specification has been designed to be compatible with {{EuridiceHealthDataA
 
 This guide is part of the broader European EHDS-aligned interoperability landscape and focuses on the imaging report model and related access patterns. It is designed to be complementary to other EHDS family guides and to remain interoperable with established IHE workflows.
 
-In particular, this guide aligns with  /  and related IHE document exchange infrastructure. The separation between report and manifest is intentional:
+In particular, this guide aligns with {{iheMADO}} / {{manifest}} and related IHE document exchange infrastructure. The separation between report and manifest is intentional:
 * The report communicates the clinician-authored interpretation and supporting clinical content.
 * The manifest communicates imaging-study inventory and retrieval context for DICOM access.
 
