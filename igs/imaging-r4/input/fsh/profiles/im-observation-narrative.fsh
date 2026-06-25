@@ -39,6 +39,7 @@ as it was entered by the reporting clinician or an automated system."
 * value[x].extension[renderingXhtml] ^short = "XHTML rendering of the narrative value"
 * value[x].extension[renderingMarkdown] ^short = "Markdown rendering of the narrative value"
 
+
 Invariant: im-narrative-value-1
 Description: "Either the narrative value (valueString) or its Attachment cross-version extension (value.extension) SHALL be present."
 Severity: #error

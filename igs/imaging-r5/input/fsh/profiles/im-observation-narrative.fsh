@@ -5,7 +5,7 @@ Description: "Unstructured narrative text in an imaging report."
 
 * insert SetFmmAndStatusRule( 1, draft )
 
-* obeys im-narrative-value-1
+//R4* obeys im-narrative-value-1
 
 * code = $loinc#18782-3
   // * insert SliceCodeableConceptWithRequiredCode( narrative-report, $loinc, #18782-3 )
@@ -38,8 +38,3 @@ as it was entered by the reporting clinician or an automated system."
 //R4* value[x].extension[valueAttachment].value[x] only Attachment
 //R4* value[x].extension[renderingXhtml] ^short = "XHTML rendering of the narrative value"
 //R4* value[x].extension[renderingMarkdown] ^short = "Markdown rendering of the narrative value"
-
-Invariant: im-narrative-value-1
-Description: "Either the narrative value (valueString) or its Attachment cross-version extension (value.extension) SHALL be present."
-Severity: #error
-Expression: "value.exists() or value.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.value').exists()"
