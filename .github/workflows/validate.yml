@@ -42,7 +42,10 @@ jobs:
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
 
-      - name: Preprocess
+      - name: Install liquidjs
+        run: sudo npm install -g liquidjs
+
+      - name: Build and validate imaging-r4 and imaging-r5
         run: |
           chmod u+x *.sh
           ./_preprocessMultiVersion.sh

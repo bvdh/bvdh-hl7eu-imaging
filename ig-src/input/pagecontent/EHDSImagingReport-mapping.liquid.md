@@ -461,10 +461,24 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td></td>
       </tr>
       <tr>
+        <td>body.supportingInformation.observation</td>
+        <td></td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>body.supportingInformation.condition</td>
         <td>source-is-narrower-than-target</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
         <td>section[history].entry</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>body.supportingInformation.condition</td>
+        <td></td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
         <td></td>
       </tr>
       <tr>
@@ -475,6 +489,13 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td></td>
       </tr>
       <tr>
+        <td>body.supportingInformation.priorMedicationAdministration</td>
+        <td></td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>body.supportingInformation.device</td>
         <td>source-is-narrower-than-target</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
@@ -482,10 +503,24 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td></td>
       </tr>
       <tr>
+        <td>body.supportingInformation.device</td>
+        <td></td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>body.supportingInformation.pregnancyStatus</td>
         <td>source-is-narrower-than-target</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
         <td>section[history].entry</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>body.supportingInformation.pregnancyStatus</td>
+        <td></td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
         <td></td>
       </tr>
       <tr>
@@ -717,13 +752,6 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>equivalent</td>
         <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
         <td>media</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>attachments</td>
-        <td>equivalent</td>
-        <td><a href="./StructureDefinition-ObservationFindingEuImaging.html">ObservationFindingEuImaging</a></td>
-        <td>derivedFrom</td>
         <td></td>
       </tr>
     </tbody>
@@ -1166,10 +1194,24 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td></td>
       </tr>
       <tr>
+        <td>body.supportingInformation.observation</td>
+        <td>source-is-narrower-than-target</td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>body.supportingInformation.condition</td>
         <td>source-is-narrower-than-target</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
         <td>section[history].entry</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>body.supportingInformation.condition</td>
+        <td>source-is-narrower-than-target</td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
         <td></td>
       </tr>
       <tr>
@@ -1180,7 +1222,28 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td></td>
       </tr>
       <tr>
+        <td>body.supportingInformation.priorMedicationAdministration</td>
+        <td>source-is-narrower-than-target</td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>body.supportingInformation.device</td>
+        <td>source-is-narrower-than-target</td>
+        <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
+        <td>section[history].entry</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>body.supportingInformation.device</td>
+        <td>source-is-narrower-than-target</td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>body.supportingInformation.pregnancyStatus</td>
         <td>source-is-narrower-than-target</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
         <td>section[history].entry</td>
@@ -1189,8 +1252,8 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
       <tr>
         <td>body.supportingInformation.pregnancyStatus</td>
         <td>source-is-narrower-than-target</td>
-        <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[history].entry</td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>extension[patientHistory]</td>
         <td></td>
       </tr>
       <tr>
@@ -1422,13 +1485,6 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>equivalent</td>
         <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
         <td>media</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>attachments</td>
-        <td>equivalent</td>
-        <td><a href="./StructureDefinition-ObservationFindingEuImaging.html">ObservationFindingEuImaging</a></td>
-        <td>derivedFrom</td>
         <td></td>
       </tr>
     </tbody>
