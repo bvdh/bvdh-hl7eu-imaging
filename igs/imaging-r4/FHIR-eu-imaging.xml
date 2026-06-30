@@ -140,11 +140,11 @@
 <artifact id="ValueSet/valueset-diagnosticreport-notes" key="ValueSet-valueset-diagnosticreport-notes" name="ValueSet: Section codes used to label annotations."/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
-<page key="adapting" name="Adapting Guidelines for Country use"/>
+<page deprecated="true" key="adapting" name="Adapting Guidelines for Country use"/>
 <page key="artifacts-intro" name="Artifacts"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="contributors" name="Authors and contributors"/>
-<page key="changes" name="Changes"/>
+<page key="changes" name="Change Log"/>
 <page key="copyright" name="Copyright"/>
 <page key="current-status" name="Current status"/>
 <page key="data-formats" name="Data formats"/>

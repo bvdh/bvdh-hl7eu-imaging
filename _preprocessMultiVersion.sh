@@ -65,7 +65,7 @@ for version in "${versions[@]}"; do
             failed=1
         fi
     done
-    [ "$failed" -eq 1 ] && exit 1
+    if [ "$failed" -eq 1 ]; then exit 1; fi
 
     # # make readonly
     # echo Setting read-only permissions on $build_dir
