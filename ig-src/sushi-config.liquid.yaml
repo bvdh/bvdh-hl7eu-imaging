@@ -74,7 +74,7 @@ pages:
   index.md:
     title: Home
     changes.md: 
-      title: Changes
+      title: Change Log
     dependencies.md:
       title: Dependencies
     references.md:
@@ -163,8 +163,6 @@ parameters:
 menu:
   Home: index.html
   Introduction:
-    Changes: changes.html
-    Dependencies: dependencies.html
     References: references.html
     Adapting Guidelines for Country use: adapting.html
   Functional:
@@ -180,6 +178,8 @@ menu:
     Patterns and Guidelines: patterns-and-guidelines.html
     Design considerations: design-considerations.html
   About:
+    Change Log: changes.html
+    Dependencies: dependencies.html
     Authors and contributors: contributors.html
     Copyright: copyright.html
   Artifacts:
