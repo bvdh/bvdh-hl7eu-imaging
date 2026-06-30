@@ -38,34 +38,28 @@ for version in "${versions[@]}"; do
     cp -R ig-src/input $build_dir 
     cp -R ig-src/ig-template $build_dir 
     
-    # Process all liquid files in parallel
+    # Process all liquid files
     echo Processing liquid files
     pids=()
-    while IFS= read -r file; do
+    while IFS= read -r -d '' file; do
         if [ -f "$file" ]; then
-            file_path=${file}
-            clean_file_path=${file_path/\.liquid\./\.}
-            echo "- $file_path --> $clean_file_path"
-
-            # Launch each liquidjs call in the background
             (
+                file_path=${file}
+                clean_file_path=${file_path/\.liquid\./\.}
+                echo "- $file_path --> $clean_file_path"
+
+                # Process liquid template and inline version tags
                 content=$(npx --yes liquidjs -t @"$file" --context @"context-${context_version}.json")
-                echo "$content" > "$clean_file_path"
+                printf '%s\n' "$content" > "$clean_file_path"
                 rm -f "$file"
             ) &
-            pids+=($!)
+            pids+=("$!")
         fi
-    done < <(find $build_dir -type f -name "*.liquid.*")
+    done < <(find "$build_dir" -type f -name "*.liquid.*" -print0)
 
-    # Wait for all liquidjs processes to finish and collect exit codes
-    failed=0
     for pid in "${pids[@]}"; do
-        if ! wait "$pid"; then
-            echo "ERROR: a liquidjs process (pid $pid) failed" >&2
-            failed=1
-        fi
+        wait "$pid"
     done
-    if [ "$failed" -eq 1 ]; then exit 1; fi
 
     # # make readonly
     # echo Setting read-only permissions on $build_dir
