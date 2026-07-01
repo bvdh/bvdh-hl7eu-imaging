@@ -25,6 +25,6 @@ end note
 DR "1" --> "0..*" ONR : result (references Observation)
 
 NARRATIVE ..> ONR : source data in\nvalueString / valueAttachment
-NARRATIVE ..> COMP : rendered in section[].text\nor section[report].text
+NARRATIVE ..> COMP : encoded in section.text
 
 @enduml
