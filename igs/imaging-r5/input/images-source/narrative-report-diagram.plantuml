@@ -16,7 +16,15 @@ class "CompositionEuImaging" as COMP {
 	section[report].text: for full narrative when no sections
 }
 
+note as NARRATIVE
+	**Report narrative text**
+	The unstructured narrative present
+	in most imaging reports
+end note
+
 DR "1" --> "0..*" ONR : result (references Observation)
-COMP "1" --> "0..*" ONR : section[].text.extension[text-link]\n(inline references Observation)
+
+NARRATIVE ..> ONR : source data in\nvalueString / valueAttachment
+NARRATIVE ..> COMP : encoded in section.text
 
 @enduml
