@@ -1,5 +1,5 @@
-{% include fsh-link-references.md %}
-{% include variable-definitions.md %}
+{% raw %}{% include fsh-link-references.md %}{% endraw %}
+{% raw %}{% include variable-definitions.md %}{% endraw %}
 
  <!-- Horizontal banner -->
 <div style="border: 2px solid #003366; border-radius: 8px; padding: 1em; margin: 1.5em 0; background-color: #f9f9ff; display: flex; flex-direction: column; align-items: flex-start;">
@@ -43,26 +43,19 @@
 
 ### Scope
 
-This implementation guide specifies imaging study report data in the **European** context, as defined in {{ehnImaging}} and refined by {{XtEhrImaging}}, as a FHIR model. It defines:
-* The structure and contents of FHIR imaging study reports.
+This implementation guide specifies imaging study report data in the **European** context, as defined in {% raw %}{{ehnImaging}}{% endraw %} and refined by {% raw %}{{XtEhrImaging}}{% endraw %}, as a FHIR model. It defines:
+* The structure and contents of a FHIR imaging study report.
 * Mapping between this IG and the Xt-EHR logical models for imaging reports, as functional requirements.
 * Example implementations of the defined models for Imaging Study Reports.
-* The relation of this specification with the existing ecosystem, including IHE MADO, IHE RAD, and EHDS API specifications.
+* Relation of this specification with the existing ecosystem, including IHE MADO, IHE RAD, and EHDS API specifications.
 
-The specification is to be used in a variety of deployment models, which includes the EHDS use cases: exchange data within healthcare organizations, across nations/regions and cross border information exchange. In all of these use cases it is important that it is compatible with the existing ecosystem.
-
-Current approaches within Europe use different approaches to information exchange:
-* **Document based exchange**, the document is represented as a FHIR Document Bundle.
-* **REST API based access to documents**, a [[[Composition]]] and [[[DiagnosticReport]]] for each document including instances of the referred resources
-* **REST API based access to resources**, as in the previous approach, but the (important) resources are *harmonized*, meaning that all documents point to the same [[[Patient]]], [[[Organization]]], and other resources.
-
-The specification is being designed in such a way that it can be used in all of these deployment scenarios.
+This specification has been designed to be compatible with {% raw %}{{EuridiceHealthDataAPI}}{% endraw %}.
 
 ### Relationship and scope boundaries
 
 This guide is part of the broader European EHDS-aligned interoperability landscape and focuses on the imaging report model and related access patterns. It is designed to be complementary to other EHDS family guides and to remain interoperable with established IHE workflows.
 
-In particular, this guide aligns with {{iheMADO}} / {{manifest}} and related IHE document exchange infrastructure. The separation between report and manifest is intentional:
+In particular, this guide aligns with {% raw %}{{iheMADO}}{% endraw %} / {% raw %}{{manifest}}{% endraw %} and related IHE document exchange infrastructure. The separation between report and manifest is intentional:
 * The report communicates the clinician-authored interpretation and supporting clinical content.
 * The manifest communicates imaging-study inventory and retrieval context for DICOM access.
 
@@ -80,18 +73,4 @@ The goal of this Implementation Guide is to define an European standard for the 
 
 The development of this implementation guide is promoted by HL7 Europe, but realized in collaboration with several other European and national organizations and projects. The aspiration of this guide is to be used as basis for European National Guides, the European EHRxF ,and - consequently - by MyHealth@EU for the EU cross-border services.
 
-### FHIR specific Dependencies
-
-{% include dependency-table-en.xhtml %}
-
-### Cross Version Analysis
-
-{% include cross-version-analysis-en.xhtml %}
-
-### Global Profiles
-
-{% include globals-table-en.xhtml %}
-
-### IP statements
-
-{% include ip-statements-en.xhtml %}
+{% raw %}{% include how-to-read.md %}{% endraw %}
