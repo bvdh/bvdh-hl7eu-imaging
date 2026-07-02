@@ -193,7 +193,6 @@ menu:
     Authors and contributors: contributors.html
     Copyright: copyright.html
     Current status: current-status.html
-    Dependencies: dependencies.html
     Cross version analysis: cross-version-analysis.html
   Artifacts:
     Structural: artifacts-structural.html

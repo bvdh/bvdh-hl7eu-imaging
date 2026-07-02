@@ -71,7 +71,7 @@
 <artifact id="Observation/ObservationAnchor" key="Observation-ObservationAnchor" name="Observation Anchor"/>
 <artifact id="StructureDefinition/ObservationGestationalAgeEuImaging" key="StructureDefinition-ObservationGestationalAgeEuImaging" name="Observation: Gestational Age"/>
 <artifact id="StructureDefinition/ObservationFindingEuImaging" key="StructureDefinition-ObservationFindingEuImaging" name="Observation: Imaging Finding"/>
-<artifact id="StructureDefinition/observation-finding-obligation-eu-imaging" key="StructureDefinition-observation-finding-obligation-eu-imaging" name="Observation: Imaging Finding: Obligations"/>
+<artifact deprecated="true" id="StructureDefinition/observation-finding-obligation-eu-imaging" key="StructureDefinition-observation-finding-obligation-eu-imaging" name="Observation: Imaging Finding: Obligations"/>
 <artifact id="StructureDefinition/ObservationRadiationDoseEuImaging" key="StructureDefinition-ObservationRadiationDoseEuImaging" name="Observation: Radiation Dose"/>
 <artifact id="Observation/RestWmsi17" key="Observation-RestWmsi17" name="Observation: WMSI apex at rest - normal"/>
 <artifact id="Observation/StressWmsi17" key="Observation-StressWmsi17" name="Observation: WMSI apex under stress - normal"/>
@@ -148,8 +148,10 @@
 <page key="artifacts-intro" name="Artifacts"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="contributors" name="Authors and contributors"/>
+<page key="background" name="Background and context"/>
 <page key="changes" name="Change Log"/>
 <page key="copyright" name="Copyright"/>
+<page key="cross-version-analysis" name="Cross version analysis"/>
 <page key="current-status" name="Current status"/>
 <page key="data-formats" name="Data formats"/>
 <page key="dependencies" name="Dependencies"/>
@@ -159,7 +161,9 @@
 <page key="example-semi-structured" name="Example semi structured report"/>
 <page key="example-structured" name="Example structured report"/>
 <page key="examples" name="Examples"/>
+<page key="missing-data" name="Handling missing data"/>
 <page key="index" name="Home"/>
+<page key="how-to-read" name="How to read this guide"/>
 <page key="imaging-report" name="Imaging Report"/>
 <page key="artifacts-obligations" name="Obligations"/>
 <page key="patterns-and-guidelines" name="Patterns and Guidelines"/>

@@ -171,6 +171,7 @@ menu:
     Authors and contributors: contributors.html
     Copyright: copyright.html
     Current status: current-status.html
+    Cross version analysis: cross-version-analysis.html
   Artifacts:
     Structural: artifacts-structural.html
     Obligations: artifacts-obligations.html
