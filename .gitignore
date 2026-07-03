@@ -25,3 +25,7 @@ ig-test
 # FHIR publisher specific
 build-logs/**
 jira/node_modules/**
+
+# Downloaded Xt-EHR logical model definitions (regenerable, not source)
+scripts/XtEHR-models/**
+
