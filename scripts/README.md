@@ -87,3 +87,34 @@ Run `sushi` to check the mapping.
 > sushi .
 
 Note: The script generates Obligations files, which will no longer be required by this IG, but still provide the functionality of validating FHIR compliance of the mapped paths.
+
+## Obligations (MS ⇒ obligation convention)
+
+This IG follows an **MS ⇒ obligation** convention (FHIR-56773): every Must-Support (MS) element
+carries an obligation. Where the Xt-EHR (EHDS) logical model defines an obligation for the mapped
+source element, that obligation is used; otherwise the IG defines its own using codes from the
+[FHIR obligation code system](https://hl7.org/fhir/extensions/CodeSystem-obligation.html). Every
+mandatory (`1..1`) element carries a `SHALL:populate` obligation. Obligations are **not reduced**
+below the level defined by the Xt-EHR model.
+
+Obligations are stored in dedicated `<Resource>ObligationEuImaging` profiles, generated from
+`xtehr-model-mapping.tsv` by `generateDataBasedOnModel.js`. When several source elements map to the
+same target element, the **strongest** obligation applies (`SHALL` > `SHOULD` > `MAY`).
+
+### Obligations table + consistency check
+
+`updateEuImagingObligations.js` builds `eu-imaging-obligations.csv` — all fields of all EU Imaging
+profiles with their EHDS / R5 / R4 obligations, MS flag, cardinality, and the contributing EHDS
+source paths. Run:
+
+> node updateEuImagingObligations.js --check
+
+This regenerates the table and reports, against the Xt-EHR mapping:
+
+* `eu-imaging-obligations-mismatches.csv` — **missing EHDS-sourced obligations** and
+  **level-reducing overrides** (IG obligation weaker than EHDS).
+* `eu-imaging-obligations-gaps.csv` — MS fields without an obligation, and mandatory `1..1` fields
+  not at `SHALL:populate`.
+
+With `--check` the process exits non-zero when mismatches exist. See the
+`obligation-consistency-check` skill for details.
