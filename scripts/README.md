@@ -64,6 +64,22 @@ Run `xtehr-mapping.sh`, which will read the `xtehr-mode-mapping.tsv` file and ge
 
 *Note*: The script generates Obligations files, which will no longer be required by this IG, but still provide the functionality of validating FHIR compliance of the mapped paths.
 
+#### Xt-EHR obligation columns
+
+Before generating, `xtehr-mapping.sh` runs `injectObligationsIntoTsv.js`, which
+inserts two columns into `xtehr-model-mapping.tsv` between `Xt-EHR source` and
+`R5 Mapped Resource`:
+
+* `Xt-EHR Producer Obligation`
+* `Xt-EHR Consumer Obligation`
+
+These are populated per element from the published `*Obligations` profiles
+(in `XtEHR-models/obligations/`), grouped by actor. The step is idempotent (it
+skips if the columns already exist). Because the Google spreadsheet is the master
+source, add these two columns to the spreadsheet as well if you want them to
+survive the next `.tsv` download; otherwise they are re-injected locally on each
+`xtehr-mapping.sh` run.
+
 ### Test mapping
 
 Run `sushi` to check the mapping.
