@@ -328,18 +328,6 @@ function generateStyledMarkdownTable(parsedData, srcResource) {
     
     writable.write(`#### ${srcResource}\n\n`);
     
-    // Callout boxes
-    writable.write(`<div class="model-map-block">\n`);
-    writable.write(`  <div class="callout-wrapper">\n`);
-    writable.write(`    <div class="callout-box">\n`);
-    writable.write(`      <strong>Ongoing alignment:</strong>\n`);
-    writable.write(`      The Xt-EHR logical models are under active revision and continuous refinement.\n`);
-    writable.write(`      Updates from Xt-EHR will be progressively incorporated into this Implementation\n`);
-    writable.write(`      Guide to maintain alignment with the evolving EHDS specifications.\n`);
-    writable.write(`    </div>\n`);
-    writable.write(`  </div>\n`);
-    writable.write(`</div>\n\n`);
-    
     writable.write(`The following table shows the mapping from ${srcResource} logical model elements to FHIR profiles.\n\n`);
     
     // Mapping context
@@ -673,6 +661,22 @@ function generateMappingIndex(generatedFiles, nonCoreWithR, resourcesWithoutR) {
     writable.write(`-->\n\n`);
     writable.write('{% include variable-definitions.md %}\n\n');
     writable.write('The following tables describe the way the [Xt-EHR logical model](https://build.fhir.org/ig/Xt-EHR/xt-ehr-common/StructureDefinition-XtEHR.html) has been mapped onto the FHIR profiles defined in this specification.\n\n');
+
+    // Ongoing alignment callout (applies to all Xt-EHR mappings)
+    writable.write(`<div class="model-map-block">\n`);
+    writable.write(`  <div class="callout-wrapper">\n`);
+    writable.write(`    <div class="callout-box">\n`);
+    writable.write(`      <strong>Ongoing alignment:</strong>\n`);
+    writable.write(`      This Implementation Guide is based on the Xt-EHR logical models\n`);
+    writable.write(`      <a href="https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html" target="_blank">release 1.0.0</a>.\n`);
+    writable.write(`      These models are currently under discussion in the EU comitology process.\n`);
+    writable.write(`      During this discussion it is likely that changes will be made; such changes are to be\n`);
+    writable.write(`      published in the implementation acts related to\n`);
+    writable.write(`      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202500327#art_15" target="_blank">article 15</a>\n`);
+    writable.write(`      of the EHDS Regulation. These changes will be addressed in future versions of this Implementation Guide.\n`);
+    writable.write(`    </div>\n`);
+    writable.write(`  </div>\n`);
+    writable.write(`</div>\n\n`);
 
     // Sort files alphabetically for consistent output
     const sortedFiles = generatedFiles.sort((a, b) => a.resource.localeCompare(b.resource));

@@ -6,6 +6,21 @@
 
 The following tables describe the way the [Xt-EHR logical model](https://build.fhir.org/ig/Xt-EHR/xt-ehr-common/StructureDefinition-XtEHR.html) has been mapped onto the FHIR profiles defined in this specification.
 
+<div class="model-map-block">
+  <div class="callout-wrapper">
+    <div class="callout-box">
+      <strong>Ongoing alignment:</strong>
+      This Implementation Guide is based on the Xt-EHR logical models
+      <a href="https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html" target="_blank">release 1.0.0</a>.
+      These models are currently under discussion in the EU comitology process.
+      During this discussion it is likely that changes will be made; such changes are to be
+      published in the implementation acts related to
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202500327#art_15" target="_blank">article 15</a>
+      of the EHDS Regulation. These changes will be addressed in future versions of this Implementation Guide.
+    </div>
+  </div>
+</div>
+
 ### Core models of the Imaging Report IG
 
 {% include EHDSImagingReport-mapping.md %}
