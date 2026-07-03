@@ -6,7 +6,6 @@ const obligationsDirs = {
     r4: '../ig-src/input/fsh/obligations'
 };
 const mappingTablesDir   = '../ig-src/input/pagecontent/';	
-const xtehrDir           = '../input/resources';	
 const conceptMapIntroDir = '../input/intro-notes';
 
 // Indices for relevant columns
@@ -46,26 +45,6 @@ const CORE_MODELS = [
     // Add other core models here as needed
 ];
 
-function extractAndCopyResources(parsedData, srcResources ) {
-    // Extract unique source resources
-    
-
-    // Copy XtEHR resources
-    const srcModel = new Set(
-    parsedData
-        .filter(row => row[indices.srcResource]?.startsWith('EHDS'))
-        .filter(row => row[indices.tgtResource]?.length > 0)
-        .map(row => row[indices.srcResource])
-    );
-    srcModel.forEach(srcResource => {
-    console.log(`XtEHR-models/StructureDefinition-${srcResource}.json -> ${xtehrDir}/StructureDefinition-${srcResource}.json`);
-    fs.copyFile(
-        `XtEHR-models/StructureDefinition-${srcResource}.json`,
-        `${xtehrDir}/StructureDefinition-${srcResource}.json`,
-        (err) => {}
-    );
-    });
-}
 // function generateCodeSystem(parsedData, srcResources) {
 //     srcResources.forEach(srcResource => {
 
@@ -1304,8 +1283,6 @@ function main() {
         const srcResources = new Set(
             parsedData.filter(row => row[indices.srcResource]?.startsWith('EHDS')).map(row => row[1])
             );
-        
-        extractAndCopyResources(parsedData, srcResources);
         
         generateMappingTables(parsedData, srcResources);
         
