@@ -11,3 +11,18 @@ Following this guidance, for {{ ProducerActor }}s `SHALL/SHOULD/MAY:able-to-popu
 Every element flagged as Must-Support (MS) carries an obligation. Where the Xt-EHR (EHDS) logical model defines an obligation for the mapped source element, that obligation is used; where the model defines none, this guide defines its own obligation using codes from the [FHIR obligation code system](https://hl7.org/fhir/extensions/CodeSystem-obligation.html). Every mandatory (`1..1`) element carries a `SHALL:populate` obligation, since a required element must be populated when its value is known.
 
 Obligations are stored in dedicated `<Resource>Obligation…` profiles and are derived from the Xt-EHR mapping. When more than one source element maps to the same target element, the strongest obligation applies (`SHALL` > `SHOULD` > `MAY`), and the contributing Xt-EHR source elements are recorded in the obligation's documentation. This guide does not lower an obligation below the level defined by the Xt-EHR model.
+
+#### Interpretation of the obligation codes
+
+The obligation codes used in this guide are interpreted as follows:
+
+{:.grid}
+| Obligation code | Applies to | Interpretation |
+| --------------- | ---------- | -------------- |
+| `SHALL:populate` | {{ ProducerActor }} | The producer SHALL populate the field. Every **mandatory (`1..1`) element** carries a `SHALL:populate` obligation — a required element cannot be optional to populate. *(Requested via FHIR-56732.)* |
+| `SHOULD:populate-if-known` | {{ ProducerActor }} | If the system has access to this information it needs to populate it; it is not required to provide input means for it. *(Requested via FHIR-56742.)* |
+| `SHALL/SHOULD/MAY:able-to-populate` | {{ ProducerActor }} | The producer SHALL/SHOULD/MAY be *able* to populate the field **when the information is available/known to it**. A reporting application **cannot document what it does not know** and is not required to source or reconstruct data it never received (e.g. prior comparisons viewed only in PACS and not communicated discretely to the RIS). *(Clarification requested via FHIR-56741.)* |
+| `SHALL/SHOULD/MAY:process` | {{ ConsumerActor }} | The consumer SHALL/SHOULD/MAY process the field (e.g. store it, act on it, or make it available to the reader). |
+
+Note that no display related obligations are used: the variety of {{ ConsumerActor }}s makes it very difficult if not impossible to determine a generic display rule. Where a field is important to surface to the reader (such as the releasing organization), the expected consumer behaviour is described as narrative guidance rather than as a `display` obligation.
+

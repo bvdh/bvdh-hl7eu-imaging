@@ -81,7 +81,7 @@ CompositionEuImaging,attester[resultValidator].time,1..1,,SHALL:able-to-populate
 CompositionEuImaging,author,1..*,,,,,,,,,
 CompositionEuImaging,author[author],0..*,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingReport.header.author[x],EHDSImagingReport.header.author[x]
 CompositionEuImaging,author[authoringDevice],0..*,,,,,,,,,
-CompositionEuImaging,author[organization],0..*,,SHALL:able-to-populate,SHOULD:process,,,SHALL:able-to-populate,,EHDSImagingReport.header.author[x],EHDSImagingReport.header.author[x]
+CompositionEuImaging,author[organization],0..*,,SHALL:able-to-populate,SHOULD:process,,,SHALL:able-to-populate,SHOULD:process,EHDSImagingReport.header.author[x],EHDSImagingReport.header.author[x]
 CompositionEuImaging,category,2..*,,SHALL:able-to-populate,,SHALL:able-to-populate,,,,EHDSImagingReport.header.documentType,EHDSImagingReport.header.documentType
 CompositionEuImaging,category[diagnostic-service],0..1,,SHALL:able-to-populate,SHOULD:process,SHOULD:able-to-populate,,SHALL:able-to-populate,,"EHDSImagingReport.header.documentType, EHDSImagingReport.header.eventType, EHDSImagingReport.header.serviceSpecialty","EHDSImagingReport.header.documentType, EHDSImagingReport.header.eventType, EHDSImagingReport.header.serviceSpecialty"
 CompositionEuImaging,category[imaging-report],1..1,,,,,,,,,
@@ -120,7 +120,7 @@ CompositionEuImaging,section[findings].extension,0..*,,,,,,,,,
 CompositionEuImaging,section[findings].extension[note],0..*,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingReport.body.examinationReport.results[x],EHDSImagingReport.body.examinationReport.results[x]
 CompositionEuImaging,section[history],1..1,,,,,,,,,
 CompositionEuImaging,section[history].code,1..1,,,,,,,,,
-CompositionEuImaging,section[history].entry,0..*,,SHOULD:able-to-populate,,SHOULD:able-to-populate,,SHOULD:able-to-populate,,"EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus","EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus"
+CompositionEuImaging,section[history].entry,0..*,,SHOULD:able-to-populate,,SHOULD:populate-if-known,,SHOULD:populate-if-known,,"EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus","EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus"
 CompositionEuImaging,section[history].entry[implants],0..*,,,,,,,,,
 CompositionEuImaging,section[history].entry[medication],0..*,,,,,,,,,
 CompositionEuImaging,section[history].entry[problemlist],0..*,,,,,,,,,
@@ -215,7 +215,7 @@ DiagnosticReportEuImaging,extension[note],0..*,,SHALL:able-to-populate,SHOULD:pr
 DiagnosticReportEuImaging,extension[note].extension,0..0,,,,,,,,,
 DiagnosticReportEuImaging,extension[note].value[x].extension[annotation-type],0..*,,,,,,,,,
 DiagnosticReportEuImaging,extension[note].value[x].extension[annotation-type].value[x],1..1,,,,,,,,,
-DiagnosticReportEuImaging,extension[patientHistory],0..*,Y,SHOULD:able-to-populate,,SHOULD:able-to-populate,,SHOULD:able-to-populate,,"EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus","EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus"
+DiagnosticReportEuImaging,extension[patientHistory],0..*,Y,SHOULD:able-to-populate,,SHOULD:populate-if-known,,SHOULD:populate-if-known,,"EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus","EHDSImagingReport.body.supportingInformation.observation, EHDSImagingReport.body.supportingInformation.condition, EHDSImagingReport.body.supportingInformation.priorMedicationAdministration, EHDSImagingReport.body.supportingInformation.device, EHDSImagingReport.body.supportingInformation.pregnancyStatus"
 DiagnosticReportEuImaging,extension[procedure],0..*,Y,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,"EHDSImagingReport.body.exposureInformation, EHDSImagingReport.body.examinationReport.imagingProcedures","EHDSImagingReport.body.exposureInformation, EHDSImagingReport.body.examinationReport.imagingProcedures"
 DiagnosticReportEuImaging,extension[recommendation],0..*,Y,SHOULD:able-to-populate,SHOULD:process,SHOULD:able-to-populate,,SHOULD:able-to-populate,,EHDSImagingReport.body.recommendation,EHDSImagingReport.body.recommendation
 DiagnosticReportEuImaging,identifier,1..*,,SHALL:able-to-populate,SHALL:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingReport.header.identifier,EHDSImagingReport.header.identifier
@@ -227,7 +227,7 @@ DiagnosticReportEuImaging,note,0..*,,SHALL:able-to-populate,SHOULD:process,SHALL
 DiagnosticReportEuImaging,note.extension[annotation-type],0..*,,,,,,,,,
 DiagnosticReportEuImaging,note.extension[annotation-type].value[x],1..1,,,,,,,,,
 DiagnosticReportEuImaging,performer,0..*,,,,,,,,,
-DiagnosticReportEuImaging,performer[organization],0..*,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingReport.header.author[x],EHDSImagingReport.header.author[x]
+DiagnosticReportEuImaging,performer[organization],0..*,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,SHOULD:process,EHDSImagingReport.header.author[x],EHDSImagingReport.header.author[x]
 DiagnosticReportEuImaging,presentedForm,0..*,,SHOULD:able-to-populate,SHOULD:process,SHOULD:able-to-populate,,SHOULD:able-to-populate,,EHDSImagingReport.presentedForm,EHDSImagingReport.presentedForm
 DiagnosticReportEuImaging,result,1..*,Y,,,,,,,,
 DiagnosticReportEuImaging,resultsInterpreter,0..*,,,,,,,,,
@@ -607,7 +607,7 @@ ImagingStudyEuImaging,series.specimen,0..*,,SHOULD:able-to-populate,SHOULD:proce
 ImagingStudyEuImaging,series.started,0..1,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingStudy.series.started,EHDSImagingStudy.series.started
 ImagingStudyEuImaging,series.uid,1..1,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingStudy.series.seriesUid,EHDSImagingStudy.series.seriesUid
 ImagingStudyEuImaging,started,0..1,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,"EHDSImagingStudy.header.date, EHDSImagingStudy.started","EHDSImagingStudy.header.date, EHDSImagingStudy.started"
-ImagingStudyEuImaging,status,1..1,,SHALL:able-to-populate,,MAY:able-to-populate,,MAY:able-to-populate,,EHDSImagingStudy.header.status,EHDSImagingStudy.header.status
+ImagingStudyEuImaging,status,1..1,,SHALL:able-to-populate,,SHALL:populate,,SHALL:populate,,EHDSImagingStudy.header.status,EHDSImagingStudy.header.status
 ImagingStudyEuImaging,subject,1..1,,SHALL:able-to-populate,SHOULD:process,SHALL:able-to-populate,,SHALL:able-to-populate,,EHDSImagingStudy.header.subject,EHDSImagingStudy.header.subject
 ImagingStudyEuImagingInstanceDescription,extension,0..0,,,,,,,,,
 ImagingStudyEuImagingInstanceDescription,url,1..1,,,,,,,,,

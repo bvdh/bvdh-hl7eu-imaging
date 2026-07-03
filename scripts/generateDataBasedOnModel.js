@@ -1248,6 +1248,7 @@ function generateSectionTablesMarkdown(parsedData) {
 
     // Define custom section order
     const sectionOrder = [
+        'Header',
         'Imaging Study',
         'Order',
         'History',

@@ -12,7 +12,6 @@ CompositionEuImaging,attester[resultValidator].party.extension[deviceAttester],C
 CompositionEuImaging,attester[resultValidator].time,Producer R5,SHALL:able-to-populate,SHOULD:able-to-populate,override reduces level below EHDS for: able-to-populate
 CompositionEuImaging,attester[resultValidator].time,Producer R4,SHALL:able-to-populate,SHOULD:able-to-populate,override reduces level below EHDS for: able-to-populate
 CompositionEuImaging,author[author],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
-CompositionEuImaging,author[organization],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 CompositionEuImaging,category[diagnostic-service],Producer R5,SHALL:able-to-populate,SHOULD:able-to-populate,override reduces level below EHDS for: able-to-populate
 CompositionEuImaging,category[diagnostic-service],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 CompositionEuImaging,custodian,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
@@ -26,6 +25,8 @@ CompositionEuImaging,language,Producer R4,SHALL:able-to-populate,SHOULD:able-to-
 CompositionEuImaging,section[comparison].entry[comparedstudy],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 CompositionEuImaging,section[findings].entry[finding],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 CompositionEuImaging,section[findings].extension[note],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
+CompositionEuImaging,section[history].entry,Producer R5,SHOULD:able-to-populate,SHOULD:populate-if-known,missing EHDS obligation for: able-to-populate
+CompositionEuImaging,section[history].entry,Producer R4,SHOULD:able-to-populate,SHOULD:populate-if-known,missing EHDS obligation for: able-to-populate
 CompositionEuImaging,section[impression].entry[finding],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 CompositionEuImaging,section[impression].entry[impression],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 CompositionEuImaging,section[impression].extension[note],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
@@ -48,6 +49,8 @@ DiagnosticReportEuImaging,extension[comparison],Consumer,SHOULD:process,,missing
 DiagnosticReportEuImaging,extension[finding],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,extension[impression],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,extension[note],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
+DiagnosticReportEuImaging,extension[patientHistory],Producer R5,SHOULD:able-to-populate,SHOULD:populate-if-known,missing EHDS obligation for: able-to-populate
+DiagnosticReportEuImaging,extension[patientHistory],Producer R4,SHOULD:able-to-populate,SHOULD:populate-if-known,missing EHDS obligation for: able-to-populate
 DiagnosticReportEuImaging,extension[procedure],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,extension[recommendation],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,identifier,Consumer,SHALL:process,,missing EHDS-sourced obligation (not carried by any IG profile)
@@ -56,7 +59,6 @@ DiagnosticReportEuImaging,language,Producer R5,SHALL:able-to-populate,SHOULD:abl
 DiagnosticReportEuImaging,language,Producer R4,SHALL:able-to-populate,SHOULD:able-to-populate,override reduces level below EHDS for: able-to-populate
 DiagnosticReportEuImaging,media,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,note,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
-DiagnosticReportEuImaging,performer[organization],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,presentedForm,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,resultsInterpreter[author],Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 DiagnosticReportEuImaging,status,Producer R5,SHALL:able-to-populate,MAY:able-to-populate,override reduces level below EHDS for: able-to-populate
@@ -199,8 +201,8 @@ ImagingStudyEuImaging,series.specimen,Consumer,SHOULD:process,,missing EHDS-sour
 ImagingStudyEuImaging,series.started,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 ImagingStudyEuImaging,series.uid,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 ImagingStudyEuImaging,started,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
-ImagingStudyEuImaging,status,Producer R5,SHALL:able-to-populate,MAY:able-to-populate,override reduces level below EHDS for: able-to-populate
-ImagingStudyEuImaging,status,Producer R4,SHALL:able-to-populate,MAY:able-to-populate,override reduces level below EHDS for: able-to-populate
+ImagingStudyEuImaging,status,Producer R5,SHALL:able-to-populate,SHALL:populate,missing EHDS obligation for: able-to-populate
+ImagingStudyEuImaging,status,Producer R4,SHALL:able-to-populate,SHALL:populate,missing EHDS obligation for: able-to-populate
 ImagingStudyEuImaging,subject,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 ProcedureEuImaging,code,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)
 ServiceRequestOrderEuImaging,extension[reason].extension[concept].valueCodeableConcept,Consumer,SHOULD:process,,missing EHDS-sourced obligation (not carried by any IG profile)

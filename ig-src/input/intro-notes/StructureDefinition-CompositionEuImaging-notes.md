@@ -7,6 +7,49 @@ NOTE: Structural concerns and rationale on the ImComposition profile can be foun
 
 ## Elements to include in sections narratives
 
+### Header
+
+The following table lists the elements that should be included in the narrative of the Header section.
+
+{:.grid}
+| First order resource | Element | Referenced resource | Logical model resource.field |
+| -------- | ------- | -------------- | --------------------- |
+| CompositionEuImaging | subject | EuPatient | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.subject |
+| DiagnosticReportEuImaging | subject | EuPatient | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.subject |
+| CompositionEuImaging | identifier |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.identifier |
+| DiagnosticReportEuImaging | identifier |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.identifier |
+| CompositionEuImaging | author[author] | EuDevice | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.author[x] |
+| DiagnosticReportEuImaging | resultsInterpreter[author] | EuOrganization | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.author[x] |
+| DiagnosticReportEuImaging | performer[organization] | EuOrganization | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.author[x] |
+| DiagnosticReportEuImaging | resultsInterpreter[author] | EuPractitionerRole | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.author[x] |
+| CompositionEuImaging | date |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.date |
+| DiagnosticReportEuImaging | issued |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.date |
+| CompositionEuImaging | status |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.status |
+| DiagnosticReportEuImaging | status |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.status |
+| CompositionEuImaging | language |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.language |
+| DiagnosticReportEuImaging | language |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.language |
+| CompositionEuImaging | category |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.documentType |
+| CompositionEuImaging | title |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.documentTitle |
+| CompositionEuImaging | event.period |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.period |
+| DiagnosticReportEuImaging | effectivePeriod |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.period |
+| CompositionEuImaging | version |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.version |
+| DiagnosticReportEuImaging | extension[artifactVersion] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.version |
+| CompositionEuImaging | attester[resultValidator] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.attestation |
+| CompositionEuImaging | attester[resultValidator].party | EuPractitionerRole | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.attestation.attester[x] |
+| CompositionEuImaging | attester[resultValidator].party.extension[deviceAttester] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.attestation.attester[x] |
+| CompositionEuImaging | attester[resultValidator].time |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.attestation.datetime |
+| CompositionEuImaging | attester[legalAuthenticator] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.legalAuthentication |
+| CompositionEuImaging | attester[legalAuthenticator].time |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.legalAuthentication.datetime |
+| CompositionEuImaging | category[diagnostic-service] | ImagingStudyEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.eventType |
+| ProcedureEuImaging | code | EuLocation | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.eventType |
+| ImagingStudyEuImaging | series.modality |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.eventType |
+| ImagingStudyEuImaging | modality |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.eventType |
+| DiagnosticReportEuImaging | category[diagnostic-service] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.serviceSpecialty |
+| CompositionEuImaging | category[diagnostic-service] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.serviceSpecialty |
+| CompositionEuImaging | custodian | EuOrganization | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.custodian |
+| CompositionEuImaging | extension[informationRecipient] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.intendedRecipient[x] |
+| DiagnosticReportEuImaging | extension[informationRecipient] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.intendedRecipient[x] |
+
 ### Imaging Study
 
 The following table lists the elements that should be included in the narrative of the Imaging Study section.

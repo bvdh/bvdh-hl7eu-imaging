@@ -30,7 +30,6 @@ ImagingStudyEuImaging,series.instance.sopClass,1..1,mandatory 1..1 with non-SHAL
 ImagingStudyEuImaging,series.instance.uid,1..1,mandatory 1..1 with non-SHALL:populate obligation (has: SHALL:able-to-populate / SHALL:able-to-populate / SHALL:able-to-populate)
 ImagingStudyEuImaging,series.modality,1..1,mandatory 1..1 with non-SHALL:populate obligation (has: SHALL:able-to-populate / SHALL:able-to-populate / SHALL:able-to-populate)
 ImagingStudyEuImaging,series.uid,1..1,mandatory 1..1 with non-SHALL:populate obligation (has: SHALL:able-to-populate / SHALL:able-to-populate / SHALL:able-to-populate)
-ImagingStudyEuImaging,status,1..1,mandatory 1..1 with non-SHALL:populate obligation (has: MAY:able-to-populate / MAY:able-to-populate / SHALL:able-to-populate)
 ImagingStudyEuImaging,subject,1..1,mandatory 1..1 with non-SHALL:populate obligation (has: SHALL:able-to-populate / SHALL:able-to-populate / SHALL:able-to-populate)
 ObservationRadiationDoseEuImaging,value[x],1..1,mandatory 1..1 with non-SHALL:populate obligation (has: SHOULD:able-to-populate / SHOULD:able-to-populate / SHOULD:able-to-populate)
 ProcedureEuImaging,code,1..1,mandatory 1..1 with non-SHALL:populate obligation (has: SHOULD:able-to-populate / SHOULD:able-to-populate / SHOULD:able-to-populate)
