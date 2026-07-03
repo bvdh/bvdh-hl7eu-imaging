@@ -14,14 +14,14 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
-| EuDevice | type |  | [EHDSDevice](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSDevice.html).type |
-| ImagingStudyEuImaging | series.specimen | EuSpecimen | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.specimen |
-| ImagingStudyEuImaging | series.modality |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.modality |
-| ImagingStudyEuImaging | series.bodySite |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.bodySite |
-| ImagingStudyEuImaging | status |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingStudy.html).header.status |
-| ImagingStudyEuImaging | series.modality |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingStudy.html).modality |
-| ImagingStudyEuImaging | started |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingStudy.html).started |
-| ImagingStudyEuImaging | description |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingStudy.html).description |
+| EuDevice | type |  | [EHDSDevice](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSDevice.html).type |
+| ImagingStudyEuImaging | series.specimen | EuSpecimen | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.specimen |
+| ImagingStudyEuImaging | series.modality |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.modality |
+| ImagingStudyEuImaging | series.bodySite |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.bodySite |
+| ImagingStudyEuImaging | status |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingStudy.html).header.status |
+| ImagingStudyEuImaging | series.modality |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingStudy.html).modality |
+| ImagingStudyEuImaging | started |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingStudy.html).started |
+| ImagingStudyEuImaging | description |  | [EHDSImagingStudy](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingStudy.html).description |
 
 ### Order
 
@@ -30,12 +30,12 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field | Comments |
 | -------- | ------- | -------------- | --------------------- | -------- |
-| ServiceRequestOrderEuImaging | identifier[accessionNumber] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).header.accessionNumber |  |
-| CompositionEuImaging | extension[informationRecipient] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).header.intendedRecipient[x] |  |
-| ServiceRequestOrderEuImaging | authoredOn |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.orderDateAndTime |  |
-| ServiceRequestOrderEuImaging | requester |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.orderPlacer[x] |  |
-| ServiceRequestOrderEuImaging | reason.concept |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.orderReason[x] |  |
-| ServiceRequestOrderEuImaging | reason.concept |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.clinicalQuestion | Order reason and clinical question map to the same element by design choice |
+| ServiceRequestOrderEuImaging | identifier[accessionNumber] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.accessionNumber |  |
+| CompositionEuImaging | extension[informationRecipient] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).header.intendedRecipient[x] |  |
+| ServiceRequestOrderEuImaging | authoredOn |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.orderDateAndTime |  |
+| ServiceRequestOrderEuImaging | requester |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.orderPlacer[x] |  |
+| ServiceRequestOrderEuImaging | reason.concept |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.orderReason[x] |  |
+| ServiceRequestOrderEuImaging | reason.concept |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.orderInformation.clinicalQuestion | Order reason and clinical question map to the same element by design choice |
 | ServiceRequestOrderEuImaging | code |  | . |  |
 
 ### History
@@ -45,17 +45,17 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
-| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.observation |
-| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.observation |
-| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.condition |
-| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.condition |
-| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.priorMedicationAdministration |
-| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.priorMedicationAdministration |
-| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.device |
-| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.device |
-| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.pregnancyStatus |
-| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.pregnancyStatus |
-| EuPatient | extension[sex-for-clinical-use] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.sexForClinicalUse |
+| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.observation |
+| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.observation |
+| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.condition |
+| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.condition |
+| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.priorMedicationAdministration |
+| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.priorMedicationAdministration |
+| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.device |
+| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.device |
+| CompositionEuImaging | section[history].entry |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.pregnancyStatus |
+| DiagnosticReportEuImaging | extension[patientHistory] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.pregnancyStatus |
+| EuPatient | extension[sex-for-clinical-use] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.supportingInformation.sexForClinicalUse |
 
 ### Procedure
 
@@ -64,18 +64,18 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field | Comments |
 | -------- | ------- | -------------- | --------------------- | -------- |
-| EuAllergyIntolerance | criticality |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSAllergyIntolerance.html).criticality |  |
-| EuAllergyIntolerance | onsetPeriod |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSAllergyIntolerance.html).onsetDate |  |
-| EuAllergyIntolerance | onsetDateTime |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSAllergyIntolerance.html).onsetDate |  |
-| EuAllergyIntolerance | reaction |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSAllergyIntolerance.html).reaction |  |
-| EuAllergyIntolerance | reaction.manifestation |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSAllergyIntolerance.html).reaction.manifestation |  |
-| EuAllergyIntolerance | reaction.severity |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSAllergyIntolerance.html).reaction.severity |  |
-| EuDevice | type |  | [EHDSDevice](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSDevice.html).type |  |
-| DiagnosticReportEuImaging | extension[procedure] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.exposureInformation | Comments in this issue https://github.com/Xt-EHR/xt-ehr-common/issues/365 |
-| CompositionEuImaging | section[procedure].entry[procedure] | EuProcedure | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.imagingProcedures |  |
-| CompositionEuImaging | section[procedure].entry[adverse-event] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.adverseReaction |  |
-| EuMedicationAdministration | reason |  | [EHDSMedicationAdministration](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSMedicationAdministration.html).reason[x] |  |
-| EuMedicationAdministration | note |  | [EHDSMedicationAdministration](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSMedicationAdministration.html).note |  |
+| EuAllergyIntolerance | criticality |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSAllergyIntolerance.html).criticality |  |
+| EuAllergyIntolerance | onsetPeriod |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSAllergyIntolerance.html).onsetDate |  |
+| EuAllergyIntolerance | onsetDateTime |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSAllergyIntolerance.html).onsetDate |  |
+| EuAllergyIntolerance | reaction |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSAllergyIntolerance.html).reaction |  |
+| EuAllergyIntolerance | reaction.manifestation |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSAllergyIntolerance.html).reaction.manifestation |  |
+| EuAllergyIntolerance | reaction.severity |  | [EHDSAllergyIntolerance](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSAllergyIntolerance.html).reaction.severity |  |
+| EuDevice | type |  | [EHDSDevice](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSDevice.html).type |  |
+| DiagnosticReportEuImaging | extension[procedure] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.exposureInformation | Comments in this issue https://github.com/Xt-EHR/xt-ehr-common/issues/365 |
+| CompositionEuImaging | section[procedure].entry[procedure] | EuProcedure | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.imagingProcedures |  |
+| CompositionEuImaging | section[procedure].entry[adverse-event] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.adverseReaction |  |
+| EuMedicationAdministration | reason |  | [EHDSMedicationAdministration](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSMedicationAdministration.html).reason[x] |  |
+| EuMedicationAdministration | note |  | [EHDSMedicationAdministration](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSMedicationAdministration.html).note |  |
 
 ### Comparison
 
@@ -84,7 +84,7 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
-| CompositionEuImaging | section[comparison].entry[comparedstudy] | ImagingStudyEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.comparisonStudy |
+| CompositionEuImaging | section[comparison].entry[comparedstudy] | ImagingStudyEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.comparisonStudy |
 
 ### Findings
 
@@ -93,9 +93,9 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
-| DiagnosticReportEuImaging | extension[finding] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
-| CompositionEuImaging | section[findings].extension[note] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
-| DiagnosticReportEuImaging | note |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
+| DiagnosticReportEuImaging | extension[finding] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
+| CompositionEuImaging | section[findings].extension[note] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
+| DiagnosticReportEuImaging | note |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.results[x] |
 
 ### Impression
 
@@ -104,10 +104,10 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
-| EuCondition | code |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCondition.html).problem |
-| EuCondition | severity |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCondition.html).severity |
-| CompositionEuImaging | section[impression].extension[note] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.impression |
-| CompositionEuImaging | section[impression].entry[impression] | ObservationFindingEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.conditionOrFinding[x] |
+| EuCondition | code |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSCondition.html).problem |
+| EuCondition | severity |  | [EHDSCondition](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSCondition.html).severity |
+| CompositionEuImaging | section[impression].extension[note] |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.impression |
+| CompositionEuImaging | section[impression].entry[impression] | ObservationFindingEuImaging | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.examinationReport.conclusion.conditionOrFinding[x] |
 
 ### Recommendation
 
@@ -116,10 +116,19 @@ The following table lists the elements that should be included in the narrative 
 {:.grid}
 | First order resource | Element | Referenced resource | Logical model resource.field |
 | -------- | ------- | -------------- | --------------------- |
-| EuCarePlan | status |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCarePlan.html).header.status |
-| EuCarePlan | title |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCarePlan.html).title |
-| EuCarePlan | description |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCarePlan.html).description |
-| EuCarePlan | activity |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSCarePlan.html).activity[x] |
-| EuCarePlan | description |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.recommendation.description |
-| CompositionEuImaging | section[recommendation].entry[suggestion] | EuCarePlan | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html).body.recommendation.carePlan |
+| EuCarePlan | status |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSCarePlan.html).header.status |
+| EuCarePlan | title |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSCarePlan.html).title |
+| EuCarePlan | description |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSCarePlan.html).description |
+| EuCarePlan | activity |  | [EHDSCarePlan](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSCarePlan.html).activity[x] |
+| EuCarePlan | description |  | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.recommendation.description |
+| CompositionEuImaging | section[recommendation].entry[suggestion] | EuCarePlan | [EHDSImagingReport](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html).body.recommendation.carePlan |
+
+### R5 Composition section
+
+The following table lists the elements that should be included in the narrative of the R5 Composition section section.
+
+{:.grid}
+| First order resource | Element | Referenced resource | Logical model resource.field | Comments |
+| -------- | ------- | -------------- | --------------------- | -------- |
+| R5 Mapped Resource | R5 Mapped Field |  | [Xt-EHR resource](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-Xt-EHR resource.html).Xt-EHR field | R5 Comments |
 

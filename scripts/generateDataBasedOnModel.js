@@ -35,7 +35,7 @@ const indices = {
     sectionR4: 29,
 };
 
-const XtEHRBaseUrl = "https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-";
+const XtEHRBaseUrl = "https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-";
 
 // Configuration: Define which models are considered "core" for this IG
 const CORE_MODELS = [

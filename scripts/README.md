@@ -15,19 +15,21 @@ The XtEHR source files are stored in XtEHR-models. This section explains the pro
 
 ### Download and extract logical model
 
-Updating these files is done using following process:
+Updating these files is done using the following process.
 
-Enter source directory:
-> cd XtEHR-models
+The published EHDS Logical Information Models are downloaded as a FHIR package
+and the base StructureDefinitions (excluding the `*Obligations` profiles) are
+extracted into `XtEHR-models`. From the `scripts` directory run:
 
-Download model files:
-> wget  http://build.fhir.org/ig/Xt-EHR/xt-ehr-common/definitions.json.zip
+> ./dowloadXtEhr.sh
 
-Or for the 0.2.0 release:
-> wget https://github.com/Xt-EHR/xt-ehr-common/archive/refs/tags/0.2.0.zip
+This downloads `https://www.xt-ehr.eu/fhir/models/1.0.0/package.tgz` (EHDS
+Logical Information Models v1.0.0) and refreshes the model files in
+`XtEHR-models`.
 
-Unzip file
-> unzip definitions.json.zip
+To pull a different published release, change the version in the
+`https://www.xt-ehr.eu/fhir/models/<version>/package.tgz` URL in
+`dowloadXtEhr.sh`.
 
 ### Create xtehr-model.csv file
 
@@ -35,6 +37,13 @@ In the `scripts` directory run:
 > node parseLogicalModels.js XtEHR-models xtehr-model.csv
 
 This will store the data of the source model in xtehr-model.csv.
+
+The file starts with a header row and has the following columns:
+`Resource; Field; Cardinality; Definition; Type; Binding; Short; Producer Obligation; Consumer Obligation`.
+The two obligation columns are populated from the published `*Obligations`
+profiles (downloaded by `dowloadXtEhr.sh` into `XtEHR-models/obligations/`), so
+each element carries its producer/consumer obligations (e.g.
+`SHALL:able-to-populate` / `SHOULD:process`) directly in the spreadsheet source.
 
 ### Edit mapping
 
