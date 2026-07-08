@@ -30,7 +30,7 @@ Alias: $performer-function-url                = http://hl7.org/fhir/StructureDef
 Alias: $sexParameter-for-clinical-use-url     = http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse
 Alias: $workflow-reason-url                   = http://hl7.org/fhir/StructureDefinition/workflow-reason
 // Alias: $workflow-status-reason-url            = http://hl7.org/fhir/StructureDefinition/workflow-statusReason
-// Alias: $textLink                              = http://hl7.org/fhir/StructureDefinition/textLink
+{{R5}} Alias: $textLink                              = http://hl7.org/fhir/StructureDefinition/textLink
 {% if isR4 %}
 Alias: $CrossVersion-Attachment.pages                     = http://hl7.org/fhir/5.0/StructureDefinition/extension-Attachment.pages
 Alias: $CrossVersion-Composition.version                  = http://hl7.org/fhir/5.0/StructureDefinition/extension-Composition.version
@@ -40,3 +40,6 @@ Alias: $CrossVersion-R5-DocumentReference.modality-for-R4 = http://hl7.org/fhir/
 Alias: $diagnosticReport-composition = http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.composition
 {% endif %}
 Alias: $hl7euDiagnosticReferenceReference     =  http://hl7.eu/fhir/extensions/StructureDefinition/composition-diagnosticReportReference
+Alias: $rendering-xhtml-url                   =  http://hl7.org/fhir/StructureDefinition/rendering-xhtml
+Alias: $rendering-markdown-url               =  http://hl7.org/fhir/StructureDefinition/rendering-markdown
+Alias: $CrossVersion-Observation.value       =  http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.value

@@ -175,3 +175,12 @@ The following table lists the elements that should be included in the narrative 
 | -------- | ------- | -------------- | --------------------- | -------- |
 | R5 Mapped Resource | R5 Mapped Field |  | [Xt-EHR resource](https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-Xt-EHR resource.html).Xt-EHR field | R5 Comments |
 
+### R5 Composition section
+
+The following table lists the elements that should be included in the narrative of the R5 Composition section section.
+
+{:.grid}
+| First order resource | Element | Referenced resource | Logical model resource.field | Comments |
+| -------- | ------- | -------------- | --------------------- | -------- |
+| R5 Mapped Resource | R5 Mapped Field |  | [Xt-EHR resource](https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-Xt-EHR resource.html).Xt-EHR field | R5 Comments |
+
